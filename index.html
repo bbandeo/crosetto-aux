@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crosetto auxiliar</title>
+    <meta http-equiv="Content-Language" content="English" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./styles/bootstrap.min.css" media="screen" />
+</head>
+<body>
+  <header>
+        <nav>
+          <a href="#"><img src="./styles/Logo-Crosetto-w.png" alt="Crosetto Ingeniería S.A." id="logo"/></a>
+          <ul>
+            <li><a class="active" href="#">Inicio</a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+          </ul>
+          <label id="icon">
+            <i class="fas fa-bars"></i>
+          </label>
+        </nav>
+  </header>
+  <div class="container" id="todo">
+        <div class="row col-lg-12 page-header">
+            <h1>Cálculo de Transelevador <small>Calles, niveles y profundidades</small></h1>
+        </div>
+        <div role="tabpanel">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#multiple" aria-controls="multiple" data-toggle="tab" role="tab" style="color: #464646">1- Múltiple Profundidad</a></li>
+            <li role="presentation" ><a href="#simple" aria-controls="simple" data-toggle="tab" role="tab" style="color: #464646">2- Doble y simple profundidad</a></li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active contenido" id="multiple">
+                <div class="wrapper">
+                <div class="dimensiones">
+                    <div class="form-group" style="padding-left:20px">
+                        <br>
+                        <label for="exampleInputEmail1">Largo [mts]</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="largo_m"
+                          placeholder=""
+                          value="47.60"
+                        />
+                      </div>
+                      <div class="form-group" style="padding-left:20px">
+                        <label for="exampleInputEmail1">Ancho [mts]</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="ancho_m"
+                          placeholder=""
+                          value="13.90"
+                        />
+                      </div>
+                      <div class="form-group" style="padding-left:20px">
+                        <label for="exampleInputEmail1">Alto [mts]</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="alto_m"
+                          placeholder=""
+                          value="18.00"
+                        />
+                      </div>
+                      <div class="form-group" style="padding-left:20px">
+                        <label for="exampleInputEmail1">Alto de Pallet [mts]</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="altopallet_m"
+                          placeholder=""
+                          value="2.00"
+                        />
+                      </div>
+                      <div class="buttonHolder">
+                        <button
+                          onclick="calcularMultiprof()"
+                          type="#"
+                          class="btn btn-default calcular3"
+                        >
+                          Calcular
+                        </button>
+                    </div>
+                </div>
+                <div class="resultados">
+                    <div class="form-group" style="padding-left:20px">
+                        <br>
+                        <label for="exampleInputEmail1">Posiciones Totales</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="posiciones_m"
+                          placeholder=""
+                          value="1"
+                        />
+                      </div>
+                      <div class="form-group" style="padding-left:20px">
+                        <label for="exampleInputEmail1">Profundidades</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="profundidad_m"
+                          placeholder=""
+                          value="1"
+                        />
+                      </div>
+                      <div class="form-group" style="padding-left:20px">
+                        <label for="exampleInputEmail1">Niveles</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="niveles_m"
+                          placeholder=""
+                          value="1"
+                        />
+                      </div>
+                      <div class="form-group" style="padding-left:20px">
+                        <label for="exampleInputEmail1">Calles</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="calles_m"
+                          placeholder=""
+                          value="1"
+                        />
+                      </div>
+                      <div class="buttonHolder">
+                        <button
+                          onclick="calcularDimensionesMultiprof()"
+                          type="#"
+                          class="btn btn-default calcular2"
+                        >
+                          Calcular
+                        </button>
+                    </div>
+                </div>
+                <div class="espacios">
+                  <br><br><br><br>
+                  <div class="input-group">
+                    <span class="input-group-addon">Profundidad/pos</span>
+                    <input
+                      type="text"
+                      id="profPos"
+                      class="form-control"
+                      value="1.15"
+                    />
+                  </div>
+                  <br>
+                  <div class="input-group">
+                    <span class="input-group-addon">Ancho de calle</span>
+                    <input
+                      type="text"
+                      id="anchoCalle"
+                      class="form-control"
+                      value="1.5"
+                    />
+                  </div>
+                </div>
+                <div class="imagen">
+                    <img
+                      src="img/transmultBlanco.png"
+                      class=".et-cart-info img-responsive"
+                      alt="Responsive image"
+                    />
+                </div>
+            </div>
+            </div>
+            <div role="tabpanel" class="tab-pane contenido" id="simple">
+                <div class="dimensiones">
+                    <span>dimensionesqdsqwqqw2</span>
+                </div>
+                <div class="resultados">
+                    <span>resultados2</span>
+                </div>
+                <div class="espacios">
+                    <span>espacios2</span>
+                </div>
+                <div class="imagen">
+                    <img
+                      src="img/transmult.png"
+                      class=".et-cart-info img-responsive"
+                      alt="Responsive image"
+                    />
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+  </div> 
+  <!-- Modal Section -->
+  <div class="bg-modal">
+    
+
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
