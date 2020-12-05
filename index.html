@@ -9,8 +9,8 @@
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
-    <link rel="stylesheet" type="text/css" href="./styles/style.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="./styles/bootstrap.min.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="./styles/style.css" media="screen" />
 </head>
 <body>
   <header>
@@ -83,11 +83,7 @@
                         />
                       </div>
                       <div class="buttonHolder">
-                        <button
-                          onclick="calcularMultiprof()"
-                          type="#"
-                          class="btn btn-default calcular3"
-                        >
+                        <button onclick="calcularMultiprof()" type="#" class="btn btn-default calcular3">
                           Calcular
                         </button>
                     </div>
@@ -135,36 +131,11 @@
                         />
                       </div>
                       <div class="buttonHolder">
-                        <button
-                          onclick="calcularDimensionesMultiprof()"
-                          type="#"
-                          class="btn btn-default calcular2"
-                        >
-                          Calcular
-                        </button>
+                        <button onclick="calcularDimensionesMultiprof()" type="#" class="btn btn-default calcular2">Calcular</button>
                     </div>
                 </div>
                 <div class="espacios">
                   <br><br><br><br>
-                  <div class="input-group">
-                    <span class="input-group-addon">Profundidad/pos</span>
-                    <input
-                      type="text"
-                      id="profPos"
-                      class="form-control"
-                      value="1.15"
-                    />
-                  </div>
-                  <br>
-                  <div class="input-group">
-                    <span class="input-group-addon">Ancho de calle</span>
-                    <input
-                      type="text"
-                      id="anchoCalle"
-                      class="form-control"
-                      value="1.5"
-                    />
-                  </div>
                 </div>
                 <div class="imagen">
                     <img
@@ -172,6 +143,9 @@
                       class=".et-cart-info img-responsive"
                       alt="Responsive image"
                     />
+                    <div class="buttonHolder">
+                      <button id="ucarga" type="#" class="btn btn-default abrirModal">Unidad de carga</button>
+                  </div>
                 </div>
             </div>
             </div>
@@ -193,18 +167,99 @@
                     />
                 </div>
             </div>
+            
         </div>
+        </div>
+
         </div>
     </div>
-  </div> 
-  <!-- Modal Section -->
+  <!-- Modal Section (afuera del container)-->
   <div class="bg-modal">
-    
-
+    <div class="modal-content">
+      <div class="row col-lg-12 page-header tabsdecarga">
+        <h1>Medidas <small>- Unidades de carga -</small></h1>
+        <div role="tabpanel">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#alto" aria-controls="alto" data-toggle="tab" role="tab" style="color: #464646">1- Alto</a></li>
+            <li role="presentation" ><a href="#ancho" aria-controls="ancho" data-toggle="tab" role="tab" style="color: #464646">2- Ancho</a></li>
+            <li role="presentation" ><a href="#largo" aria-controls="largo" data-toggle="tab" role="tab" style="color: #464646">3- Largo</a></li>
+        </ul>
+        </div>
+      </div>
+      <div role="tabpanel" class="modal-tab-panel active contenido" id="multiple"> 
+        <div class="modal-img">
+          <img
+            src="img/detalleAlto.PNG"
+            class=".et-cart-info img-responsive"
+            alt="Responsive image"
+          />
+        </div>
+        <div class="modal-inputs altura">
+          <div class="close">+</div>
+          <div class="form-group" style="padding-left:20px">
+            <label for="exampleInputEmail1">Altura de pallet [mts]</label>
+            <input type="text" class="form-control" id="VARIABLEAQUI" placeholder="" value="4"/>
+          </div>
+          <div class="form-group" style="padding-left:20px">
+            <label for="exampleInputEmail1">Holgura pallet alto [mts]</label>
+            <input type="text" class="form-control" id="VARIABLEAQUI" placeholder="" value="3"/>
+          </div>
+          <div class="form-group" style="padding-left:20px">
+            <label for="exampleInputEmail1">Vano piso</label>
+            <input type="text" class="form-control" id="VARIABLEAQUI" placeholder="" value="3"/>
+          </div>
+          <div class="form-group" style="padding-left:20px">
+            <label for="exampleInputEmail1">Vano techo</label>
+            <input type="text" class="form-control" id="profPos" placeholder="" value="2"/>
+          </div>
+          <div class="form-group" style="padding-left:20px">
+            <label for="exampleInputEmail1">AnchoCalle este se va</label>
+            <input type="text" class="form-control" id="anchoCalle" placeholder="" value="2"/>
+          </div>
+          <div class="buttonHolder">
+            <button onclick="" type="#" class="btn btn-default calcular123">Aplicar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
   </div>
-
-
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script>
+      document.getElementById("ucarga").addEventListener('click', () => {
+        document.querySelector('.bg-modal').style.display = 'flex';
+      })
+      document.querySelector('.close').addEventListener('click', () => {
+        document.querySelector('.bg-modal').style.display = 'none';
+      }) 
+  </script>
 </body>
 </html>
+
+
+<!-- 
+<div class="form-group" style="padding-left:20px">
+  <label for="exampleInputEmail1">A LO ANCHO - Largo del pallet</label>
+  <input type="text" class="form-control" id="largo_m" placeholder="" value="47.60"/>
+</div>
+
+<div class="form-group" style="padding-left:20px">
+  <label for="exampleInputEmail1">Holgura pallet largo</label>
+  <input type="text" class="form-control" id="largo_m" placeholder="" value="47.60"/>
+</div>
+
+<div class="form-group" style="padding-left:20px">
+  <label for="exampleInputEmail1">Vano atrás contra pared</label>
+  <input type="text" class="form-control" id="largo_m" placeholder="" value="47.60"/>
+</div>
+
+<div class="form-group" style="padding-left:20px">
+  <label for="exampleInputEmail1">Pasillo</label>
+  <input type="text" class="form-control" id="largo_m" placeholder="" value="47.60"/>
+</div>
+
+<div class="form-group" style="padding-left:20px">
+  <label for="exampleInputEmail1">Largo [mts]</label>
+  <input type="text" class="form-control" id="largo_m" placeholder="" value="47.60"/>
+</div> -->

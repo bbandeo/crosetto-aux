@@ -18,15 +18,12 @@
 
 #
 
-A$C80ebe0ca
-
 CONFIGURACIÓN DE UNIDAD DE CARGA
 
 
 ALTURA DE TOTAL ( Ht )
 
     [ (altura de pallet armado + holgura pallet alto) x NIVELES ] + vano piso + vano techo
-
 
         altura de pallet armado = ( pisos producto * altura producto ) + altura de pallet _ simple o doble
 
@@ -38,4 +35,31 @@ ANCHURA DEL TOTAL ( Wt )
 
 LARGURA DEL TOTAL ( Lt )
 
-    [ (ancho pallet + holgura pallet ancho + ancho perfil ) * CALLES ] + vano anterior + vano posterior
+    [ (ancho pallet + holgura pallet ancho ) * CALLES ] + vano anterior + vano posterior
+
+    
+
+Vanos 
+    Vano altura superior techo
+    Vano piso a primer pallet
+    Vano adelante
+    Vano atrás
+    Vano contra paredes
+    Pasillo
+
+Holguras
+    Holgura pallet alto
+    Holgura pallet en profundidad
+    Holgura pallet calle ancho
+
+
+
+
+    (??)
+    Ancho perfil
+    Alto perfil 
+
+
+
+A$Cc169c059
+

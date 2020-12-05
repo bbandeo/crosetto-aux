@@ -56,6 +56,7 @@ function calcularDimensionesMultiprof() {
   document.getElementById("alto_m").value = alto;
 }
 
-let medidas = {
+
+// let medidas = {
   
-}
+// }
