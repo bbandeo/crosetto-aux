@@ -39,7 +39,7 @@
         </ul>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active contenido" id="multiple">
-              <div class="wrapper">
+                <div class="wrapper">
                 <div class="dimensiones" style="border-width: 1rem;">
                     <div class="form-group" style="padding-left:20px">
                         <br>
@@ -83,7 +83,7 @@
                         />
                       </div>
                       <div class="buttonHolder">
-                        <button onclick="calcularMultiprof()" type="#" class="btn btn-primary calcular3">
+                        <button onclick="calcularMultiprof()" type="#" class="btn btn-default calcular3">
                           Calcular
                         </button>
                     </div>
@@ -131,7 +131,7 @@
                         />
                       </div>
                       <div class="buttonHolder">
-                        <button onclick="calcularDimensionesMultiprof()" type="#" class="btn btn-primary calcular2">Calcular</button>
+                        <button onclick="calcularDimensionesMultiprof()" type="#" class="btn btn-default calcular2">Calcular</button>
                     </div>
                 </div>
                 <div class="espacios">
@@ -143,12 +143,12 @@
                       class=".et-cart-info img-responsive"
                       alt="Responsive image"
                     />
-                    <br>
-                    <div class="buttonHolder">
-                      <button id="ucarga" type="button" class="btn btn-secondary abrirModal">Dimensiones de unidad de carga</button>
-                  </div>
+
                 </div>
                 <div class="imagen-bottom">
+                  <div class="buttonHolder">
+                    <button id="ucarga" type="#" class="btn btn-default abrirModal">Dimensiones de unidad de carga</button>
+                </div>
                   <img
                     src="img/vistaSuperior.PNG"
                     class=".et-cart-info img-responsive"
@@ -184,115 +184,118 @@
   <!-- Modal Section (afuera del container)-->
   <div class="bg-modal">
     <div class="modal-content">
-      <div class="close">+</div>  
-      <div cla  ss="row col-lg-12 page-header">
-        <h1> Medidas <small>de unidad de carga</small></h1>
-      </div>
-      <div role="tabpanel2">
+      <div class="row col-lg-12 page-header tabsdecarga">
+        <h1>Medidas <small>- Unidades de carga -</small></h1>
+        <div role="tabpanel2">
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#alto" aria-controls="alto" data-toggle="tab" role="tab" style="color: #464646">1- Alto</a></li>
             <li role="presentation" ><a href="#ancho" aria-controls="ancho" data-toggle="tab" role="tab" style="color: #464646">2- Ancho</a></li>
             <li role="presentation" ><a href="#largo" aria-controls="largo" data-toggle="tab" role="tab" style="color: #464646">3- Largo</a></li>
         </ul>
-        <div class="tab-content">
-          <div role="tabpanel2" class="tab-pane active contenido" id="alto"> 
-            <div class="modal-tab-panel">
-              <div class="modal-img">
-                <img
-                  src="img/detalleAlto.PNG"
-                  class=".et-cart-info img-responsive"
-                  alt="Responsive image"
-                />
-              </div>
-              <div class="modal-inputs altura">
-                <div class="form-group">
-                  <label style="font-size:1.2rem" for="exampleInputEmail1">Altura de pallet</label>
-                  <input type="text" class="form-control" id="hpallet" placeholder="" value="4"/>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Holgura superior [mts]</label>
-                  <input type="text" class="form-control" id="qsuperior" placeholder="" value="3"/>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Vano piso</label>
-                  <input type="text" class="form-control" id="vanopiso" placeholder="" value="3"/>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Vano techo</label>
-                  <input type="text" class="form-control" id="vanotecho" placeholder="" value="2"/>
-                </div>
-                <div class="buttonHolder">
-                  <button onclick="calcularAlturaMultiprof()" type="#" class="btn btn-default calcular_altura">Aplicar</button>
-                </div>
-              </div>
-            </div>
-
+      </div>
+    </div>
+    
+      <div class="close">+</div>  
+    <div class="tab-content">
+      <div role="tabpanel2" class="modal-tab-panel active contenido" id="alto"> 
+        <div class="modal-img">
+          <img
+            src="img/detalleAlto.PNG"
+            class=".et-cart-info img-responsive"
+            alt="Responsive image"
+          />
+        </div>
+        <div class="modal-inputs altura">
+          <div class="form-group" style="padding-left:20px">
+            <label for="exampleInputEmail1">Altura de pallet [mts]</label>
+            <input type="text" class="form-control" id="VARIABLEAQUI" placeholder="" value="4"/>
           </div>
-          <div role="tabpanel2" class="tab-pane contenido" id="ancho"> 
-            <div class="modal-tab-panel">
-              <div class="modal-img ancho">
-                <img
-                  src="img/detalleAncho.PNG"
-                  class=".et-cart-info img-responsive"
-                  alt="Responsive image"
-                />
-              </div>
-              <div class="modal-inputs ancho">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Ancho pallet [Ap]</label>
-                  <input type="text" class="form-control" id="anchopallet" placeholder="" value="4"/>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Holgura ancho [Hw]</label>
-                  <input type="text" class="form-control" id="qancho" placeholder="" value="3"/>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Vano adelante [Vw]</label>
-                  <input type="text" class="form-control" id="vanoadelante" placeholder="" value="3"/>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Vano atrás</label>
-                  <input type="text" class="form-control" id="vanoatras" placeholder="" value="2"/>
-                </div>
-                <div class="buttonHolder">
-                  <button onclick="calcularAnchoMultiprof()" type="#" class="btn btn-default calcular_ancho">Aplicar</button>
-                </div>
-              </div>
-            </div>
-
+          <div class="form-group" style="padding-left:20px">
+            <label for="exampleInputEmail1">Holgura pallet alto [mts]</label>
+            <input type="text" class="form-control" id="VARIABLEAQUI" placeholder="" value="3"/>
           </div>
-          <div role="tabpanel2" class="tab-pane contenido" id="largo"> 
-            <div class="modal-tab-panel">
-              <div class="modal-img largo">
-                <img
-                  src="img/detalleProf.PNG"
-                  class=".et-cart-info img-responsive"
-                  alt="Responsive image"
-                />
-              </div>
-              <div class="modal-inputs largo">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Largo de pallet [Lp]</label>
-                  <input type="text" class="form-control" id="largopallet" placeholder="" value="4"/>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Holgura en profundidad [Hp]</label>
-                  <input type="text" class="form-control" id="qprof" placeholder="" value="3"/>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Vano posterior</label>
-                  <input type="text" class="form-control" id="vanoposterior" placeholder="" value="3"/>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Vano pasillo</label>
-                  <input type="text" class="form-control" id="vanopasillo" placeholder="" value="2"/>
-                </div>
-                <div class="buttonHolder">
-                  <button onclick="calcularLargoMultiprof()" type="#" class="btn btn-default calcular_largo">Aplicar</button>
-                </div>
-              </div>
-            </div>
-
+          <div class="form-group" style="padding-left:20px">
+            <label for="exampleInputEmail1">Vano piso</label>
+            <input type="text" class="form-control" id="VARIABLEAQUI" placeholder="" value="3"/>
+          </div>
+          <div class="form-group" style="padding-left:20px">
+            <label for="exampleInputEmail1">Vano techo</label>
+            <input type="text" class="form-control" id="profPos" placeholder="" value="2"/>
+          </div>
+          <div class="form-group" style="padding-left:20px">
+            <label for="exampleInputEmail1">AnchoCalle este se va</label>
+            <input type="text" class="form-control" id="anchoCalle" placeholder="" value="2"/>
+          </div>
+          <div class="buttonHolder">
+            <button onclick="" type="#" class="btn btn-default calcular123">Aplicar</button>
+          </div>
+        </div>
+      </div>
+      <div role="tabpanel2" class="modal-tab-panel contenido" id="ancho"> 
+        <div class="modal-img ancho">
+          <img
+            src="img/deta.PNG"
+            class=".et-cart-info img-responsive"
+            alt="Responsive image"
+          />
+        </div>
+        <div class="modal-inputs ancho">
+          <div class="form-group" style="padding-left:20px">
+            <label for="exampleInputEmail1">Altura de pallet [mts]</label>
+            <input type="text" class="form-control" id="VARIABLEAQUI" placeholder="" value="4"/>
+          </div>
+          <div class="form-group" style="padding-left:20px">
+            <label for="exampleInputEmail1">Holgura pallet alto [mts]</label>
+            <input type="text" class="form-control" id="VARIABLEAQUI" placeholder="" value="3"/>
+          </div>
+          <div class="form-group" style="padding-left:20px">
+            <label for="exampleInputEmail1">Vano piso</label>
+            <input type="text" class="form-control" id="VARIABLEAQUI" placeholder="" value="3"/>
+          </div>
+          <div class="form-group" style="padding-left:20px">
+            <label for="exampleInputEmail1">Vano techo</label>
+            <input type="text" class="form-control" id="profPos" placeholder="" value="2"/>
+          </div>
+          <div class="form-group" style="padding-left:20px">
+            <label for="exampleInputEmail1">AnchoCalle este se va</label>
+            <input type="text" class="form-control" id="anchoCalle" placeholder="" value="2"/>
+          </div>
+          <div class="buttonHolder">
+            <button onclick="" type="#" class="btn btn-default calcular123">Aplicar</button>
+          </div>
+        </div>
+      </div>
+      <div role="tabpanel2" class="modal-tab-panel contenido" id="largo"> 
+        <div class="modal-img largo">
+          <img
+            src="img/detalleAlto.PNG"
+            class=".et-cart-info img-responsive"
+            alt="Responsive image"
+          />
+        </div>
+        <div class="modal-inputs largo">
+          <div class="form-group" style="padding-left:20px">
+            <label for="exampleInputEmail1">Altura de pallet [mts]</label>
+            <input type="text" class="form-control" id="VARIABLEAQUI" placeholder="" value="4"/>
+          </div>
+          <div class="form-group" style="padding-left:20px">
+            <label for="exampleInputEmail1">Holgura pallet alto [mts]</label>
+            <input type="text" class="form-control" id="VARIABLEAQUI" placeholder="" value="3"/>
+          </div>
+          <div class="form-group" style="padding-left:20px">
+            <label for="exampleInputEmail1">Vano piso</label>
+            <input type="text" class="form-control" id="VARIABLEAQUI" placeholder="" value="3"/>
+          </div>
+          <div class="form-group" style="padding-left:20px">
+            <label for="exampleInputEmail1">Vano techo</label>
+            <input type="text" class="form-control" id="profPos" placeholder="" value="2"/>
+          </div>
+          <div class="form-group" style="padding-left:20px">
+            <label for="exampleInputEmail1">AnchoCalle este se va</label>
+            <input type="text" class="form-control" id="anchoCalle" placeholder="" value="2"/>
+          </div>
+          <div class="buttonHolder">
+            <button onclick="" type="#" class="btn btn-default calcular123">Aplicar</button>
           </div>
         </div>
       </div>

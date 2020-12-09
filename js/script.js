@@ -1,4 +1,5 @@
 $(document).ready(() => {
+  let anchocalle = q
   calcularMultiprof();
 
   $(".calcular2").click(() => {

@@ -28,6 +28,8 @@ ALTURA DE TOTAL ( Ht )
         altura de pallet armado = ( pisos producto * altura producto ) + altura de pallet _ simple o doble
 
 
+
+
 ANCHURA DEL TOTAL ( Wt )
 
     [ (largo de pallet armado + holgura pallet largo) x PROFUNDIDADES ] + ( vano posterior * 2 ) + pasillo
