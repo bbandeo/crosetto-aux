@@ -83,6 +83,10 @@ nav #icon {
   grid-column: 1 / 4;
   grid-row: 1 / 2;
 }
+.imagen-bottom {
+  grid-column: 1 / 8;
+  grid-row: 2;
+}
 .bg-modal {
   display: flex;
   justify-content: center;
