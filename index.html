@@ -10,12 +10,11 @@
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="standardValues.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
-    <!-- <script src="js/script.js"></script> -->
     <link rel="stylesheet" type="text/css" href="./styles/bootstrap.min.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="./styles/style.css" media="screen" />
 </head>
 <body>
-  <header>
+  <!-- <header>
         <nav>
           <a href="#"><img src="./styles/Logo-Crosetto-w.png" alt="Crosetto Ingeniería S.A." id="logo"/></a>
           <ul>
@@ -29,10 +28,10 @@
             <i class="fas fa-bars"></i>
           </label>
         </nav>
-  </header>
+  </header> -->
   <div class="container" id="todo">
         <div class="row col-lg-12 page-header">
-            <h1>Cálculo de Transelevador <small>Calles, niveles y profundidades</small></h1>
+            <h1>Dimensionamiento de Transelevador <small>Calles, niveles y profundidades</small></h1>
         </div>
         <div role="tabpanel">
         <ul class="nav nav-tabs" role="tablist">
@@ -42,42 +41,44 @@
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active contenido" id="multiple">
               <div class="wrapper">
-                <div class="dimensiones" style="border-width: 1rem;">
-                    <div class="form-group" style="padding-left:20px">
+                <div class="wrappercalc" style="border-style: solid; border-radius: 0.5rem; border-width: 0.3rem; margin-right: 1rem; border-color: rgb(215,215,215)">
+                  <div class="dimensiones">
+                    <h3 style="text-align: center; font-family: 'Courier New', Courier, monospace;">Dimensiones</h3>
+                    <div class="form-group" style="padding:0 30px 0 20px;">
                         <br>
-                        <label for="exampleInputEmail1">Largo [mts]</label>
+                        <label >Largo [mts]</label>
                         <input
-                          type="text"
+                          type="number"
                           class="form-control"
                           id="largo_m"
                           placeholder=""
                           value="50"
                         />
                       </div>
-                      <div class="form-group" style="padding-left:20px">
-                        <label for="exampleInputEmail1">Ancho [mts]</label>
+                      <div class="form-group" style="padding:0 30px 0 20px;">
+                        <label >Ancho [mts]</label>
                         <input
-                          type="text"
+                          type="number"
                           class="form-control"
                           id="ancho_m"
                           placeholder=""
                           value="14"
                         />
                       </div>
-                      <div class="form-group" style="padding-left:20px">
-                        <label for="exampleInputEmail1">Alto [mts]</label>
+                      <div class="form-group" style="padding:0 30px 0 20px;">
+                        <label >Alto [mts]</label>
                         <input
-                          type="text"
+                          type="number"
                           class="form-control"
                           id="alto_m"
                           placeholder=""
                           value="18.00"
                         />
                       </div>
-                      <div class="form-group" style="padding-left:20px">
-                        <label for="exampleInputEmail1">Alto de Pallet [mts]</label>
+                      <div class="form-group" style="padding:0 30px 0 20px;">
+                        <label >Alto de Pallet [mts]</label>
                         <input
-                          type="text"
+                          type="number"
                           class="form-control"
                           id="altopallet_m"
                           placeholder=""
@@ -91,46 +92,48 @@
                     </div>
                 </div>
                 <div class="resultados">
-                  <div class="form-group" style="padding-left:20px">
+                  <h3 style="text-align: center;font-family: 'Courier New', Courier, monospace;">Unidades</h3>
+                  <div class="form-group" style="padding:0 15px 0 20px;">
                     <br>
-                    <label for="exampleInputEmail1">Calles</label>
+                    <label >Calles</label>
                     <input
-                      type="text"
+                      type="number"
                       class="form-control"
                       id="calles_m"
                       placeholder=""
                       value="1"
                     />
                   </div>
-                  <div class="form-group" style="padding-left:20px">
-                    <label for="exampleInputEmail1">Profundidades</label>
+                  <div class="form-group" style="padding:0 15px 0 20px;">
+                    <label >Profundidades</label>
                     <input
-                      type="text"
+                      type="number"
                       class="form-control"
                       id="profundidad_m"
                       placeholder=""
                       value="1"
                     />
                   </div>
-                  <div class="form-group" style="padding-left:20px">
-                    <label for="exampleInputEmail1">Niveles</label>
+                  <div class="form-group" style="padding:0 15px 0 20px;">
+                    <label >Niveles</label>
                     <input
-                      type="text"
+                      type="number"
                       class="form-control"
                       id="niveles_m"
                       placeholder=""
                       value="1"
                     />
                   </div>
-                    <div class="form-group" style="padding-left:20px">
+                    <div class="form-group" style="padding:0 15px 0 20px;">
                        
-                        <label for="exampleInputEmail1">Posiciones Totales</label>
+                        <label >Posiciones Totales</label>
                         <input
-                          type="text"
+                          type="number"
                           class="form-control"
                           id="posiciones_m"
                           placeholder=""
                           value="1"
+                          readonly
                         />
                       </div>
 
@@ -138,6 +141,8 @@
                         <button onclick="calcularDimensionesMultiprof()" type="#" class="btn btn-primary calcular2">Calcular</button>
                     </div>
                 </div>
+                </div>
+
                 <div class="espacios">
                   <br><br><br><br>
                 </div>
@@ -147,9 +152,9 @@
                       class=".et-cart-info img-responsive"
                       alt="Responsive image"
                     />
-                    <br>
+                    <!-- <br> -->
                     <div class="buttonHolder">
-                      <button id="ucarga" type="button" class="btn btn-secondary abrirModal">Dimensiones de unidad de carga</button>
+                      <button id="ucarga" type="button" class="btn btn-secondary abrirModal">Configuración de unidad de carga</button>
                   </div>
                 </div>
                 <div class="imagen-bottom">
@@ -163,13 +168,13 @@
             </div>
             <div role="tabpanel" class="tab-pane contenido" id="simple">
                 <div class="dimensiones">
-                    <span>dimensionesqdsqwqqw2</span>
+                    <span>dimensiones</span>
                 </div>
                 <div class="resultados">
-                    <span>resultados2</span>
+                    <span>resultados</span>
                 </div>
                 <div class="espacios">
-                    <span>espacios2</span>
+                    <span>espacios</span>
                 </div>
                 <div class="imagen">
                     <img
@@ -210,19 +215,19 @@
               </div>
               <div class="modal-inputs altura">
                 <div class="form-group">
-                  <label style="font-size:1.2rem" for="exampleInputEmail1">Altura de pallet</label>
+                  <label >Altura de pallet</label>
                   <input type="text" class="form-control" id="altopallet_t" placeholder="" value="2.00"/>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Holgura superior [mts]</label>
+                  <label >Holgura superior</label>
                   <input type="text" class="form-control" id="qsuperior" placeholder="" value="3"/>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Vano piso</label>
+                  <label >Vano piso</label>
                   <input type="text" class="form-control" id="vanopiso" placeholder="" value="3"/>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Vano techo</label>
+                  <label >Vano techo</label>
                   <input type="text" class="form-control" id="vanotecho" placeholder="" value="2"/>
                 </div>
                 <div class="buttonHolder">
@@ -243,19 +248,19 @@
               </div>
               <div class="modal-inputs ancho">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Ancho pallet [Ap]</label>
+                  <label >Ancho pallet [Ap]</label>
                   <input type="text" class="form-control" id="anchopallet" placeholder="" value="4"/>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Holgura ancho [Hw]</label>
+                  <label >Holgura ancho [Hw]</label>
                   <input type="text" class="form-control" id="qancho" placeholder="" value="3"/>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Vano adelante [Vw]</label>
+                  <label >Vano adelante [Vw]</label>
                   <input type="text" class="form-control" id="vanoadelante" placeholder="" value="3"/>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Vano atrás</label>
+                  <label >Vano atrás</label>
                   <input type="text" class="form-control" id="vanoatras" placeholder="" value="2"/>
                 </div>
                 <div class="buttonHolder">
@@ -276,19 +281,19 @@
               </div>
               <div class="modal-inputs largo">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Largo de pallet [Lp]</label>
+                  <label >Largo de pallet [Lp]</label>
                   <input type="text" class="form-control" id="largopallet" placeholder="" value="4"/>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Holgura en profundidad [Hp]</label>
+                  <label >Holgura en profundidad [Hp]</label>
                   <input type="text" class="form-control" id="qprof" placeholder="" value="3"/>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Vano posterior</label>
+                  <label >Vano posterior</label>
                   <input type="text" class="form-control" id="vanoposterior" placeholder="" value="3"/>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Vano pasillo</label>
+                  <label >Vano pasillo</label>
                   <input type="text" class="form-control" id="vanopasillo" placeholder="" value="2"/>
                 </div>
                 <div class="buttonHolder">
@@ -316,29 +321,3 @@
 </body>
 </html>
 
-
-<!-- 
-<div class="form-group" style="padding-left:20px">
-  <label for="exampleInputEmail1">A LO ANCHO - Largo del pallet</label>
-  <input type="text" class="form-control" id="largo_m" placeholder="" value="47.60"/>
-</div>
-
-<div class="form-group" style="padding-left:20px">
-  <label for="exampleInputEmail1">Holgura pallet largo</label>
-  <input type="text" class="form-control" id="largo_m" placeholder="" value="47.60"/>
-</div>
-
-<div class="form-group" style="padding-left:20px">
-  <label for="exampleInputEmail1">Vano atrás contra pared</label>
-  <input type="text" class="form-control" id="largo_m" placeholder="" value="47.60"/>
-</div>
-
-<div class="form-group" style="padding-left:20px">
-  <label for="exampleInputEmail1">Pasillo</label>
-  <input type="text" class="form-control" id="largo_m" placeholder="" value="47.60"/>
-</div>
-
-<div class="form-group" style="padding-left:20px">
-  <label for="exampleInputEmail1">Largo [mts]</label>
-  <input type="text" class="form-control" id="largo_m" placeholder="" value="47.60"/>
-</div> -->

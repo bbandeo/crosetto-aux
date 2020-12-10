@@ -23,8 +23,6 @@ $(document).ready(() => {
   document.getElementById("qprof").value = tabLargo.qprof;
   document.getElementById("vanoposterior").value = tabLargo.vanoposterior;
   document.getElementById("vanopasillo").value = tabLargo.vanopasillo;
-
-
  
   calcularMultiprof();
 
@@ -75,34 +73,35 @@ function calcularMultiprof() {
   let profundidades = Math.floor((ancho - vanoAncho) / profundidadPos);
   // POSICIONES
   let posiciones = Math.floor(calles * niveles * profundidades);
-
   document.getElementById("calles_m").value = calles;
   document.getElementById("niveles_m").value = niveles;
   document.getElementById("profundidad_m").value = profundidades;
   document.getElementById("posiciones_m").value = posiciones;
 }
 
+
 function calcularDimensionesMultiprof() {
 
-
-  // let niveles = parseFloat(document.getElementById("niveles_m").value);
-  let altopallet = parseFloat(document.getElementById("altopallet_m").value);
-  let anchocalle = parseFloat(document.getElementById("anchoCalle").value);
-  // let profundidadPos = parseFloat(document.getElementById("profPos").value);
-  
-  
+  // LARGO
   let calles = parseFloat(document.getElementById("calles_m").value);
-  let anchoPallet = parseFloat(document.getElementById("anchopallet").value);
-  let vanoCalle = parseFloat(document.getElementById("qancho").value);
-  let anchoCalle = anchoPallet + vanoCalle;
   let vanoAdelante = parseFloat(document.getElementById("vanoadelante").value);
   let vanoAtras = parseFloat(document.getElementById("vanoatras").value);
   let vanoLargo = vanoAtras + vanoAdelante;
-  let largo = parseFloat(calles * anchoCalle) + vanoLargo;
+  let anchoPallet = parseFloat(document.getElementById("anchopallet").value);
+  let vanoCalle = parseFloat(document.getElementById("qancho").value);
+  let anchoCalle = anchoPallet + vanoCalle;
+  let largo = redondear(parseFloat((calles * anchoCalle) + vanoLargo),2);
+  
+  // ALTO
+  let niveles = parseFloat(document.getElementById("niveles_m").value);
+  let altoPallet = parseFloat(document.getElementById("altopallet_m").value);
+  let holguraSuperior = parseFloat(document.getElementById("qsuperior").value);
+  let vanoTecho = parseFloat(document.getElementById("vanotecho").value);
+  let vanoPiso = parseFloat(document.getElementById("vanopiso").value);
+  let vanoAlto = vanoTecho + vanoPiso;
+  let alto = redondear(parseFloat((niveles * (altoPallet + holguraSuperior)) + vanoAlto),2);
 
-
-
-
+  // ANCHO 
   let profundidades = parseFloat(document.getElementById("profundidad_m").value);
   let holguraProf = parseFloat(document.getElementById("qprof").value);
   let largoPallet = parseFloat(document.getElementById("largopallet").value);
@@ -110,19 +109,7 @@ function calcularDimensionesMultiprof() {
   let vanoPosterior = parseFloat(document.getElementById("vanoposterior").value);
   let vanoPasillo = parseFloat(document.getElementById("vanopasillo").value);
   let vanoAncho = vanoPasillo + (vanoPosterior * 2);
-  let ancho = parseFloat(profundidades * profundidadPos) + vanoAncho;
-
-
-  let niveles = parseFloat(document.getElementById("niveles_m").value);
-  let altoPallet = parseFloat(document.getElementById("altopallet_m").value);
-  let holguraSuperior = parseFloat(document.getElementById("qsuperior").value);
-  let vanoTecho = parseFloat(document.getElementById("vanotecho").value);
-  let vanoPiso = parseFloat(document.getElementById("vanopiso").value);
-  let vanoAlto = vanoTecho + vanoPiso;
-
-  let alto = parseFloat(niveles * (altoPallet + holguraSuperior) + vanoAlto);
-
-
+  let ancho = redondear(parseFloat((profundidades * profundidadPos) + vanoAncho),2);
 
   document.getElementById("largo_m").value = largo;
   document.getElementById("ancho_m").value = ancho;
@@ -130,30 +117,17 @@ function calcularDimensionesMultiprof() {
 }
 
 function calcularAlturaMultiprof() {
-
-  // let profundidades = parseFloat(document.getElementById("profundidad_m").value);
-  // let niveles = parseFloat(document.getElementById("niveles_m").value);
-  // let calles = parseFloat(document.getElementById("calles_m").value);
-  // let altopallet = parseFloat(document.getElementById("altopallet_m").value);
-  // let anchocalle = parseFloat(document.getElementById("anchoCalle").value);
-
-
-  // let profundidadPos = parseFloat(document.getElementById("profPos").value);
-  // let profundidadPos = parseFloat(document.getElementById("profPos").value);
-  // let profundidadPos = parseFloat(document.getElementById("profPos").value);
-  // let profundidadPos = parseFloat(document.getElementById("profPos").value);
-  //  [ (altura de pallet armado + holgura pallet alto) x NIVELES ] + vano piso + vano techo
-
-  //  altura de pallet armado = ( pisos producto * altura producto ) + altura de pallet _ simple o doble
-
-
-
+  let alturaPallet = document.getElementById("altopallet_t").value;
+  document.getElementById("altopallet_m").value = alturaPallet;
+  calcularDimensionesMultiprof()
 }
 function calcularAnchoMultiprof() {
-
-
+  let alturaPallet = document.getElementById("altopallet_t").value;
+  document.getElementById("altopallet_m").value = alturaPallet;
+  calcularDimensionesMultiprof()
 }
 function calcularLargoMultiprof() {
-
-
+  let alturaPallet = document.getElementById("altopallet_t").value;
+  document.getElementById("altopallet_m").value = alturaPallet;
+  calcularDimensionesMultiprof()
 }
