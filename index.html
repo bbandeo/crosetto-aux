@@ -8,7 +8,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
+    <script type="text/javascript" src="standardValues.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <!-- <script src="js/script.js"></script> -->
     <link rel="stylesheet" type="text/css" href="./styles/bootstrap.min.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="./styles/style.css" media="screen" />
 </head>
@@ -49,7 +51,7 @@
                           class="form-control"
                           id="largo_m"
                           placeholder=""
-                          value="47.60"
+                          value="50"
                         />
                       </div>
                       <div class="form-group" style="padding-left:20px">
@@ -59,7 +61,7 @@
                           class="form-control"
                           id="ancho_m"
                           placeholder=""
-                          value="13.90"
+                          value="14"
                         />
                       </div>
                       <div class="form-group" style="padding-left:20px">
@@ -89,8 +91,39 @@
                     </div>
                 </div>
                 <div class="resultados">
+                  <div class="form-group" style="padding-left:20px">
+                    <br>
+                    <label for="exampleInputEmail1">Calles</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="calles_m"
+                      placeholder=""
+                      value="1"
+                    />
+                  </div>
+                  <div class="form-group" style="padding-left:20px">
+                    <label for="exampleInputEmail1">Profundidades</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="profundidad_m"
+                      placeholder=""
+                      value="1"
+                    />
+                  </div>
+                  <div class="form-group" style="padding-left:20px">
+                    <label for="exampleInputEmail1">Niveles</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="niveles_m"
+                      placeholder=""
+                      value="1"
+                    />
+                  </div>
                     <div class="form-group" style="padding-left:20px">
-                        <br>
+                       
                         <label for="exampleInputEmail1">Posiciones Totales</label>
                         <input
                           type="text"
@@ -100,36 +133,7 @@
                           value="1"
                         />
                       </div>
-                      <div class="form-group" style="padding-left:20px">
-                        <label for="exampleInputEmail1">Profundidades</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="profundidad_m"
-                          placeholder=""
-                          value="1"
-                        />
-                      </div>
-                      <div class="form-group" style="padding-left:20px">
-                        <label for="exampleInputEmail1">Niveles</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="niveles_m"
-                          placeholder=""
-                          value="1"
-                        />
-                      </div>
-                      <div class="form-group" style="padding-left:20px">
-                        <label for="exampleInputEmail1">Calles</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="calles_m"
-                          placeholder=""
-                          value="1"
-                        />
-                      </div>
+
                       <div class="buttonHolder">
                         <button onclick="calcularDimensionesMultiprof()" type="#" class="btn btn-primary calcular2">Calcular</button>
                     </div>
@@ -191,8 +195,8 @@
       <div role="tabpanel2">
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#alto" aria-controls="alto" data-toggle="tab" role="tab" style="color: #464646">1- Alto</a></li>
-            <li role="presentation" ><a href="#ancho" aria-controls="ancho" data-toggle="tab" role="tab" style="color: #464646">2- Ancho</a></li>
-            <li role="presentation" ><a href="#largo" aria-controls="largo" data-toggle="tab" role="tab" style="color: #464646">3- Largo</a></li>
+            <li role="presentation" ><a href="#ancho" aria-controls="ancho" data-toggle="tab" role="tab" style="color: #464646">2- Largo</a></li>
+            <li role="presentation" ><a href="#largo" aria-controls="largo" data-toggle="tab" role="tab" style="color: #464646">3- Ancho</a></li>
         </ul>
         <div class="tab-content">
           <div role="tabpanel2" class="tab-pane active contenido" id="alto"> 
@@ -207,7 +211,7 @@
               <div class="modal-inputs altura">
                 <div class="form-group">
                   <label style="font-size:1.2rem" for="exampleInputEmail1">Altura de pallet</label>
-                  <input type="text" class="form-control" id="hpallet" placeholder="" value="4"/>
+                  <input type="text" class="form-control" id="altopallet_t" placeholder="" value="2.00"/>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Holgura superior [mts]</label>
@@ -292,7 +296,6 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
