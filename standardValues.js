@@ -9,15 +9,15 @@ let values = [
     },
     {
         "pestana_alto": {
-            "qsuperior": "0.50",
+            "qsuperior": "0.40",
             "vanopiso": "0.8",
-            "vanotecho": "2.3"
+            "vanotecho": "1.5"
         }
     },
     {
         "pestana_ancho": {
             "anchopallet": "1.00",
-            "qancho": "0.50",
+            "qancho": "0.30",
             "vanoadelante": "3.00",
             "vanoatras": "2.00"
         }
@@ -25,9 +25,9 @@ let values = [
     {
         "pestana_largo": {
             "largopallet": "1.20",
-            "qprof": "0.50",
-            "vanoposterior": "1.00",
-            "vanopasillo": "2.70"
+            "qprof": "0.15",
+            "vanoposterior": "0.30",
+            "vanopasillo": "2.10"
         }
     }
 ]
