@@ -10,11 +10,12 @@
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="standardValues.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+    <style>@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");</style>
     <link rel="stylesheet" type="text/css" href="./styles/bootstrap.min.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="./styles/style.css" media="screen" />
   </head>
   <body>
-    <!-- <header>
+    <header>
         <nav>
           <a href="#"><img src="./styles/Logo-Crosetto-w.png" alt="Crosetto Ingeniería S.A." id="logo"/></a>
           <ul>
@@ -28,11 +29,11 @@
             <i class="fas fa-bars"></i>
           </label>
         </nav>
-  </header> -->
+  </header>
     <div class="container" id="todo">
       <div class="row col-lg-12 page-header">
         <h1>
-          Dimensionamiento de Transelevador
+          Dimensionamiento de Almacén
           <small>Calles, niveles y profundidades</small>
         </h1>
       </div>
@@ -48,7 +49,84 @@
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane active contenido" id="multiple">
             <div class="wrapper">
-              <div class="wrappercalc" style="border-style: solid; border-radius: 0.5rem; border-width: 0.3rem; margin-right: 1rem; border-color: rgb(215, 215, 215)">
+              <div class="wrappercalc">
+                <div class="dimensiones">
+                  <!-- <h3 style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Dimensiones</h3> -->
+                  <h3 style="text-align: center; font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif">Dimensiones</h3>
+                  <div class="form-group" style="padding: 0 30px 0 20px">
+                    <br />
+                    <label>Largo Total  [L<sub>T</sub>]</label>
+                    <input type="number" class="form-control" id="largo_m" placeholder="" value="50" />
+                  </div>
+                  <div class="form-group" style="padding: 0 30px 0 20px">
+                    <label>Ancho [W<sub>T</sub>]</label>
+                    <input type="number" class="form-control" id="ancho_m" placeholder="" value="14" />
+                  </div>
+                  <div class="form-group" style="padding: 0 30px 0 20px">
+                    <label>Alto [h<sub>T</sub>]</label>
+                    <input type="number" class="form-control" id="alto_m" placeholder="" value="18.00" />
+                  </div>
+                  <div class="form-group" style="padding: 0 30px 0 20px">
+                    <label>Alto de Pallet [h<sub>p</sub>]</label>
+                    <input type="number" class="form-control" id="altopallet_m" placeholder="" value="2.00" />
+                  </div>
+                  <div class="buttonHolder">
+                    <button onclick="calcularMultiprof()" type="#" class="btn btn-primary calcular3">Calcular</button>
+                  </div>
+                </div>
+                <div class="resultados">
+                  <h3 style="text-align: center; font-family: 'Tahoma', Tahoma, Geneva, Verdana, sans-serif">Unidades</h3>
+                  <div class="form-group" style="padding: 0 15px 0 20px">
+                    <br />
+                    <label>Calles</label>
+                    <input type="number" class="form-control" id="calles_m" placeholder="" value="1" />
+                  </div>
+                  <div class="form-group" style="padding: 0 15px 0 20px">
+                    <label>Profundidades</label>
+                    <input type="number" class="form-control" id="profundidad_m" placeholder="" value="1" />
+                  </div>
+                  <div class="form-group" style="padding: 0 15px 0 20px">
+                    <label>Niveles</label>
+                    <input type="number" class="form-control" id="niveles_m" placeholder="" value="1" />
+                  </div>
+                  <div class="form-group" style="padding: 0 15px 0 20px">
+                    <label>Posiciones Totales</label>
+                    <input type="number" class="form-control" id="posiciones_m" placeholder="" value="1" readonly />
+                  </div>
+                  <div class="buttonHolder">
+                    <button onclick="calcularDimensionesMultiprof()" type="#" class="btn btn-primary calcular2">Calcular</button>
+                  </div>
+                </div>
+                <div class="buttonHolder" style="text-align: center; grid-column: 1 / 8">
+                  <button id="ucarga" type="button" class="btn btn-secondary abrirModal">Configuración de unidad de carga</button>
+                </div>
+              </div>
+              <div class="imagen">
+                <br />
+                <img src="img/transmultBlanco.png" class=".et-cart-info img-responsive" alt="Responsive image" />
+              </div>
+              <div class="imagen-bottom">
+                <img src="img/vistaSuperior.PNG" class=".et-cart-info img-responsive" alt="Responsive image" />
+              </div>
+
+            </div>
+          </div>
+          <!-- TAB SIMPLE Y DOBLE PROFUNDIDAD -->
+          <div role="tabpanel" class="tab-pane contenido" id="simple">
+            <form class="ware-selection" style="grid-column: 1/8; flex-wrap: wrap; align-items: right">
+              <hr />
+              <div class="check" style="align-content: right">
+                <input type="radio" id="radioSimple" name="tipoAlmacen" value="Simple" style="align-content: right" />
+                <label for="radioSimple" style="align-content: right">  Simple Profundidad</label><br />
+              </div>
+              <div class="check">
+                <input type="radio" id="radioDoble" name="tipoAlmacen" value="Doble" checked="checked" />
+                <label for="radioDoble">  Doble Profundidad</label><br />
+              </div>
+              <hr />
+            </form>
+            <div class="wrapper">
+              <div class="wrappercalc">
                 <div class="dimensiones">
                   <h3 style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Dimensiones</h3>
                   <div class="form-group" style="padding: 0 30px 0 20px">
@@ -69,9 +147,10 @@
                     <input type="number" class="form-control" id="altopallet_m" placeholder="" value="2.00" />
                   </div>
                   <div class="buttonHolder">
-                    <button onclick="calcularMultiprof()" type="#" class="btn btn-primary calcular3">Calcular</button>
+                    <button onclick="calcularSIMPLEDOBLE()" type="#" class="btn btn-primary">Calcular</button>
                   </div>
                 </div>
+
                 <div class="resultados">
                   <h3 style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Unidades</h3>
                   <div class="form-group" style="padding: 0 15px 0 20px">
@@ -91,38 +170,21 @@
                     <label>Posiciones Totales</label>
                     <input type="number" class="form-control" id="posiciones_m" placeholder="" value="1" readonly />
                   </div>
-
                   <div class="buttonHolder">
-                    <button onclick="calcularDimensionesMultiprof()" type="#" class="btn btn-primary calcular2">Calcular</button>
+                    <button onclick="calcularDimensionesSIMPLEDOBLE()" type="#" class="btn btn-primary">Calcular</button>
                   </div>
                 </div>
               </div>
-
-              <div class="espacios"><br /><br /><br /><br /></div>
               <div class="imagen">
-                <img src="img/transmultBlanco.png" class=".et-cart-info img-responsive" alt="Responsive image" />
-                <!-- <br> -->
-                <div class="buttonHolder">
-                  <button id="ucarga" type="button" class="btn btn-secondary abrirModal">Configuración de unidad de carga</button>
-                </div>
+                <br />
+                <img src="img/transDoble.png" class=".et-cart-info img-responsive" alt="Responsive image" />
               </div>
               <div class="imagen-bottom">
                 <img src="img/vistaSuperior.PNG" class=".et-cart-info img-responsive" alt="Responsive image" />
               </div>
-            </div>
-          </div>
-          <div role="tabpanel" class="tab-pane contenido" id="simple">
-            <div class="dimensiones">
-              <span>dimensiones</span>
-            </div>
-            <div class="resultados">
-              <span>resultados</span>
-            </div>
-            <div class="espacios">
-              <span>espacios</span>
-            </div>
-            <div class="imagen">
-              <img src="img/transmult.png" class=".et-cart-info img-responsive" alt="Responsive image" />
+              <div class="buttonHolder" style="text-align: right; grid-column: 1 / 8">
+                <button id="ucarga" type="button" class="btn btn-secondary abrirModal">Configuración de unidad de carga</button>
+              </div>
             </div>
           </div>
         </div>
