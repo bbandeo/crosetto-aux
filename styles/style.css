@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Montserrat';
+  font-family: 'Paduak', sans-serif;
   font-weight: 450;
 }
 
@@ -75,7 +75,7 @@ nav #icon {
   grid-row: 1;
   display: grid;
   grid-template-columns: 2;
-  padding-right: 2rem;
+  padding-right: 1rem;
   margin-bottom: 4rem;
   border-style: solid; 
   border-radius: 0.5rem; 
@@ -134,10 +134,13 @@ nav #icon {
   cursor: pointer;
 }
 .modal-tab-panel {
+  /* min-height: 520px; */
+    /* let it scroll */
+    /* overflow: auto; */
   display: flex;
   flex-flow: nowrap;
   margin-top: 0px;
-  gap: 40px;
+  gap: 30px;
 }
 .modal-inputs {
   width: 30%;

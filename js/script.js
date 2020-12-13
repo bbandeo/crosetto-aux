@@ -35,6 +35,8 @@ $(document).ready(() => {
   });
 });
 
+
+
 function redondear(cantidad, decimales) {
   var cantidad = parseFloat(cantidad);
   var decimales = parseFloat(decimales);
