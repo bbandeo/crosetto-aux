@@ -26,6 +26,22 @@ $(document).ready(() => {
 
   calcularMultiprof();
 
+  // ELEGIR SIMPLE O DOBLE
+  $("input:radio[name=tipoAlmacen]").click(function() {
+    let value = $(this).val();
+    let image_name;
+    if(value == 'Simple'){
+        image_name = "img/transSimple.png";
+    }else{
+        if(value == 'Doble'){
+            image_name = "img/transDoble.png";
+        }else{
+            image_name = "img/transmult.png";
+        }
+    }
+     $('#simpledoble').attr('src', image_name);
+});
+
   $(".calcular2").click(() => {
     calcularDimensionesMultiprof();
   });
