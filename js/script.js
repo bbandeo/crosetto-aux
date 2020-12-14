@@ -1,4 +1,9 @@
 $(document).ready(() => {
+  
+  $('.nav-tabs a[href="#simple"]').tab('show');
+
+
+
   let macros = values[0].medidas;
   let tabAlto = values[1].pestana_alto;
   let tabAncho = values[2].pestana_ancho;
@@ -26,7 +31,7 @@ $(document).ready(() => {
 
   calcularMultiprof();
 
-  // ELEGIR SIMPLE O DOBLE
+  // CAMBIAR IMAGEN(es) SIMPLE O DOBLE
   $("input:radio[name=tipoAlmacen]").click(function() {
     let value = $(this).val();
     let image_name;
@@ -40,7 +45,9 @@ $(document).ready(() => {
         }
     }
      $('#simpledoble').attr('src', image_name);
-});
+  });
+
+
 
   $(".calcular2").click(() => {
     calcularDimensionesMultiprof();
@@ -146,3 +153,58 @@ function calcularLargoMultiprof() {
   document.getElementById("altopallet_m").value = alturaPallet;
   calcularDimensionesMultiprof();
 }
+
+function calcularSimple() {
+  let output = $('input[name=tipoAlmacen]:checked', '#tipo').val(); 
+  console.log(output);
+}
+function calcularDimensionesSimple() {
+  
+
+
+}
+
+
+function calcularSimple() {
+  let output = $('input[name=tipoAlmacen]:checked', '#tipo').val(); 
+  console.log(output);
+  let profundidades = 0;
+  if (output == 'Simple') {profundidades = 2}
+    else if ( output == 'Doble') {profundidades = 4}; 
+  console.log(profundidades);
+  // CALCULO EL ANCHO
+    // let i = 0;
+    // while (i*(profundidades * fondoPasillo + pasillo) < ancho) {i++}
+    // for (i = 0 ; iPasillos < anchos ; i++)
+    // {
+    // anchoEquipo = i(4*prof+pasillo)
+    //   calculusAnchus();
+    // }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// $(document).keypress(function(e) {
+//   console.log(e)
+//   if(e.which == 49) {//1
+//     $('.nav-tabs a[href="#multiple"]').tab('show');
+//     console.log("called 1");
+//   }
+//   if(e.which == 50) {//2
+//     console.log("called 2");
+//     $('.nav-tabs a[href="#simple"]').tab('show');
+//   }
+// });
+// function getSelectedTabIndex() { 
+//   return $("#TabList").tabs('option', 'selected');
+// }
+// $("#TabList").tabs('option', 'active')

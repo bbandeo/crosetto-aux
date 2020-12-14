@@ -121,22 +121,43 @@
           </div>
           <!-- TAB SIMPLE Y DOBLE PROFUNDIDAD -->
           <div role="tabpanel" class="tab-pane contenido" id="simple">
-            <form class="ware-selection" style="grid-column: 1/8; flex-wrap: wrap; align-items: right">
+
+                          <!-- VER RADIO BUTTON CLASSES DE BOOTSTRAP - google 
+                          
+                          TO : DO
+
+                          fixed size img container - paired with wrappercalc
+                          measures and sizes with acad & ..photos
+
+                          
+                          -->
+
+            <!-- <form class="ware-selection" style="grid-column: 1/8; flex-wrap: wrap; align-items: right">
               <hr />
               <div class="check" style="align-content: right">
                 <input type="radio" id="radioSimple" name="tipoAlmacen" value="Simple" style="align-content: right" />
                 <label for="radioSimple" style="align-content: right">  Simple Profundidad</label><br />
               </div>
-              <!-- VER RADIO BUTTON CLASSES DE BOOTSTRAP - google -->
+
               <div class="check">
                 <input type="radio" id="radioDoble" name="tipoAlmacen" value="Doble" checked="checked" />
                 <label for="radioDoble">  Doble Profundidad</label><br />
               </div>
               <hr />
-            </form>
+            </form> -->
             <div class="wrapper">
               <div class="wrappercalc">
-                <div class="dimensiones">
+                <div class="form">
+                  <br>
+                  <form class="ware-selection" id="tipo" >
+                    <input type="radio" id="radioSimple" name="tipoAlmacen" value="Simple" style="align-content: right" />
+                    <label for="radioSimple" style="align-content: right">  Simple Profundidad</label><br />
+                    <input type="radio" id="radioDoble" name="tipoAlmacen" value="Doble" checked="checked" />
+                    <label for="radioDoble">  Doble Profundidad</label><br />
+                  </form>
+                  <!-- <hr> -->
+                </div>
+                <div class="dimensiones">  
                   <h3 style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Dimensiones</h3>
                   <div class="form-group" style="padding: 0 30px 0 20px">
                     <br />
@@ -156,7 +177,7 @@
                     <input type="number" class="form-control" id="altopallet_m" placeholder="" value="2.00" />
                   </div>
                   <div class="buttonHolder">
-                    <button onclick="calcularSIMPLEDOBLE()" type="#" class="btn btn-primary">Calcular</button>
+                    <button onclick="calcularSimple()" type="#" class="btn btn-primary">Calcular</button>
                   </div>
                 </div>
 
@@ -185,7 +206,7 @@
                 </div>
               </div>
               <div class="imagen">
-                <br />
+                <!-- <br /> -->
                 <img src="img/transDoble.png" name="simpledoble" id="simpledoble" class=".et-cart-info img-responsive" alt="Responsive image" />
               </div>
               <div class="imagen-bottom">
