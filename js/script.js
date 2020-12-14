@@ -2,8 +2,6 @@ $(document).ready(() => {
   
   $('.nav-tabs a[href="#simple"]').tab('show');
 
-
-
   let macros = values[0].medidas;
   let tabAlto = values[1].pestana_alto;
   let tabAncho = values[2].pestana_ancho;
@@ -31,7 +29,8 @@ $(document).ready(() => {
 
   calcularMultiprof();
 
-  // CAMBIAR IMAGEN(es) SIMPLE O DOBLE
+
+  // CAMBIAR IMAGEN() SIMPLE O DOBLE
   $("input:radio[name=tipoAlmacen]").click(function() {
     let value = $(this).val();
     let image_name;
@@ -49,13 +48,13 @@ $(document).ready(() => {
 
 
 
-  $(".calcular2").click(() => {
-    calcularDimensionesMultiprof();
-  });
+  // $(".calcular2").click(() => {
+  //   calcularDimensionesMultiprof();
+  // });
 
-  $(".calcular3").click(() => {
-    calcularMultiprof();
-  });
+  // $(".calcular3").click(() => {
+  //   calcularMultiprof();
+  // });
 });
 
 
@@ -112,7 +111,6 @@ function calcularDimensionesMultiprof() {
   let vanoCalle = parseFloat(document.getElementById("qancho").value);
   let anchoCalle = anchoPallet + vanoCalle;
   let largo = redondear(parseFloat(calles * anchoCalle + vanoLargo), 2);
-
   // ALTO
   let niveles = parseFloat(document.getElementById("niveles_m").value);
   let altoPallet = parseFloat(document.getElementById("altopallet_m").value);
@@ -121,7 +119,6 @@ function calcularDimensionesMultiprof() {
   let vanoPiso = parseFloat(document.getElementById("vanopiso").value);
   let vanoAlto = vanoTecho + vanoPiso;
   let alto = redondear(parseFloat(niveles * (altoPallet + holguraSuperior) + vanoAlto), 2);
-
   // ANCHO
   let profundidades = parseFloat(document.getElementById("profundidad_m").value);
   let holguraProf = parseFloat(document.getElementById("qprof").value);
@@ -160,8 +157,6 @@ function calcularSimple() {
 }
 function calcularDimensionesSimple() {
   
-
-
 }
 
 

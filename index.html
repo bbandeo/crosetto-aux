@@ -80,7 +80,7 @@
                     <input type="number" class="form-control" id="altopallet_m" placeholder="" value="2.00" />
                   </div>
                   <div class="buttonHolder">
-                    <button onclick="calcularMultiprof()" type="#" class="btn btn-primary calcular3">Calcular</button>
+                    <button onclick="calcularMultiprof()" type="#" class="btn btn-primary">Calcular</button>
                   </div>
                 </div>
                 <div class="resultados">
@@ -103,7 +103,7 @@
                     <input type="number" class="form-control" id="posiciones_m" placeholder="" value="1" readonly />
                   </div>
                   <div class="buttonHolder">
-                    <button onclick="calcularDimensionesMultiprof()" type="#" class="btn btn-primary calcular2">Calcular</button>
+                    <button onclick="calcularDimensionesMultiprof()" type="#" class="btn btn-primary">Calcular</button>
                   </div>
                 </div>
                 <div class="buttonHolder" style="text-align: center; grid-column: 1 / 8">
@@ -121,100 +121,87 @@
           </div>
           <!-- TAB SIMPLE Y DOBLE PROFUNDIDAD -->
           <div role="tabpanel" class="tab-pane contenido" id="simple">
-
-                          <!-- VER RADIO BUTTON CLASSES DE BOOTSTRAP - google 
-                          
-                          TO : DO
-
-                          fixed size img container - paired with wrappercalc
-                          measures and sizes with acad & ..photos
-
-                          
-                          -->
-
-            <!-- <form class="ware-selection" style="grid-column: 1/8; flex-wrap: wrap; align-items: right">
-              <hr />
-              <div class="check" style="align-content: right">
-                <input type="radio" id="radioSimple" name="tipoAlmacen" value="Simple" style="align-content: right" />
-                <label for="radioSimple" style="align-content: right">  Simple Profundidad</label><br />
-              </div>
-
-              <div class="check">
-                <input type="radio" id="radioDoble" name="tipoAlmacen" value="Doble" checked="checked" />
-                <label for="radioDoble">  Doble Profundidad</label><br />
-              </div>
-              <hr />
-            </form> -->
             <div class="wrapper">
+
               <div class="wrappercalc">
-                <div class="form">
-                  <br>
-                  <form class="ware-selection" id="tipo" >
-                    <input type="radio" id="radioSimple" name="tipoAlmacen" value="Simple" style="align-content: right" />
-                    <label for="radioSimple" style="align-content: right">  Simple Profundidad</label><br />
-                    <input type="radio" id="radioDoble" name="tipoAlmacen" value="Doble" checked="checked" />
-                    <label for="radioDoble">  Doble Profundidad</label><br />
-                  </form>
-                  <!-- <hr> -->
-                </div>
                 <div class="dimensiones">  
-                  <h3 style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Dimensiones</h3>
+                  <h3 style="text-align: center; font-family: 'Hind', Tahoma, Geneva, Verdana, sans-serif">Dimensiones</h3>
                   <div class="form-group" style="padding: 0 30px 0 20px">
                     <br />
-                    <label>Largo [mts]</label>
-                    <input type="number" class="form-control" id="largo_m" placeholder="" value="50" />
+                    <label>Largo Total  [L<sub>T</sub>]</label>
+                    <input type="number" class="form-control" id="largo_s" placeholder="" value="50" />
                   </div>
                   <div class="form-group" style="padding: 0 30px 0 20px">
-                    <label>Ancho [mts]</label>
-                    <input type="number" class="form-control" id="ancho_m" placeholder="" value="14" />
+                    <label>Ancho [W<sub>T</sub>]</label>
+                    <input type="number" class="form-control" id="ancho_s" placeholder="" value="14" />
                   </div>
                   <div class="form-group" style="padding: 0 30px 0 20px">
-                    <label>Alto [mts]</label>
-                    <input type="number" class="form-control" id="alto_m" placeholder="" value="18.00" />
+                    <label>Alto [h<sub>T</sub>]</label>
+                    <input type="number" class="form-control" id="alto_s" placeholder="" value="18.00" />
                   </div>
                   <div class="form-group" style="padding: 0 30px 0 20px">
-                    <label>Alto de Pallet [mts]</label>
-                    <input type="number" class="form-control" id="altopallet_m" placeholder="" value="2.00" />
+                    <label>Alto de Pallet [h<sub>p</sub>]</label>
+                    <input type="number" class="form-control" id="altopallet_s" placeholder="" value="2.00" />
                   </div>
-                  <div class="buttonHolder">
-                    <button onclick="calcularSimple()" type="#" class="btn btn-primary">Calcular</button>
-                  </div>
+
                 </div>
 
                 <div class="resultados">
-                  <h3 style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Unidades</h3>
+                  <h3 style="text-align: center; font-family: 'Hind', Tahoma, Geneva, Verdana, sans-serif">Unidades</h3>
+                  <br />
                   <div class="form-group" style="padding: 0 15px 0 20px">
-                    <br />
+                    <label>Transelevadores</label>
+                    <input type="number" class="form-control" id="transelevadores_s" placeholder="" value="1" />
+                  </div>
+                  <div class="form-group" style="padding: 0 15px 0 20px">
                     <label>Calles</label>
-                    <input type="number" class="form-control" id="calles_m" placeholder="" value="1" />
+                    <input type="number" class="form-control" id="calles_s" placeholder="" value="1" />
                   </div>
                   <div class="form-group" style="padding: 0 15px 0 20px">
                     <label>Profundidades</label>
-                    <input type="number" class="form-control" id="profundidad_m" placeholder="" value="1" />
+                    <input type="number" class="form-control" id="profundidad_s" placeholder="" value="1" />
                   </div>
                   <div class="form-group" style="padding: 0 15px 0 20px">
                     <label>Niveles</label>
-                    <input type="number" class="form-control" id="niveles_m" placeholder="" value="1" />
+                    <input type="number" class="form-control" id="niveles_s" placeholder="" value="1" />
                   </div>
                   <div class="form-group" style="padding: 0 15px 0 20px">
                     <label>Posiciones Totales</label>
-                    <input type="number" class="form-control" id="posiciones_m" placeholder="" value="1" readonly />
+                    <input type="number" class="form-control" id="posiciones_s" placeholder="" value="1" readonly />
                   </div>
-                  <div class="buttonHolder">
-                    <button onclick="calcularDimensionesSIMPLEDOBLE()" type="#" class="btn btn-primary">Calcular</button>
-                  </div>
+                </div>
+                <div class="buttonHolder" style="grid-column: 1 / 2;">
+                  <button onclick="calcularSimple()" type="#" class="btn btn-primary">Calcular</button>
+                </div>
+                <div class="buttonHolder" style="grid-column: 2 / 4;">
+                  <button onclick="calcularDimensionesSIMPLEDOBLE()" type="#" class="btn btn-primary">Calcular</button>
+                </div>
+                <div class="buttonHolder" style="text-align: center; grid-column: 1 / 8">
+                  <button id="ucargasimple" type="button" class="btn btn-secondary abrirModal">Configuración de unidad de carga</button>
                 </div>
               </div>
               <div class="imagen">
+
+                <div class="form">
+                  <form class="ware-selection" id="tipo">
+                    <label for="radioSimple" style="padding-left: 30px; align-content: right">Simple Profundidad
+                      <input type="radio" id="radioSimple" name="tipoAlmacen" value="Simple" style="align-content: right" />
+                      <span></span>
+                    </label><br />
+                    <label for="radioDoble" style="padding-left: 30px;">Doble Profundidad
+                      <input type="radio" id="radioDoble" name="tipoAlmacen" value="Doble" checked="checked" />
+                      <span></span>
+                    </label><br />
+                  </form>
+                </div>
+                <br>
                 <!-- <br /> -->
                 <img src="img/transDoble.png" name="simpledoble" id="simpledoble" class=".et-cart-info img-responsive" alt="Responsive image" />
               </div>
               <div class="imagen-bottom">
-                <img src="img/vistaSuperior.PNG" class=".et-cart-info img-responsive" alt="Responsive image" />
+                <img src="img/sVistaSuperior.PNG" class=".et-cart-info img-responsive" alt="Responsive image" />
               </div>
-              <div class="buttonHolder" style="text-align: right; grid-column: 1 / 8">
-                <button id="ucarga" type="button" class="btn btn-secondary abrirModal">Configuración de unidad de carga</button>
-              </div>
+
             </div>
           </div>
         </div>
@@ -355,6 +342,10 @@
       );
       document.getElementById("ucarga").addEventListener("click", () => {
         document.querySelector(".bg-modal").style.display = "flex";
+      });
+      document.getElementById("ucargasimple").addEventListener("click", () => {
+        console.log($("#TabList").tabs('option', 'active'));
+        // document.querySelector(".bg-modal").style.display = "flex";
       });
       document.querySelector(".close").addEventListener("click", () => {
         document.querySelector(".bg-modal").style.display = "none";

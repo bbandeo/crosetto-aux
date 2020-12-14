@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Paduak', sans-serif;
+  font-family: "Paduak", sans-serif;
   font-weight: 450;
 }
 
@@ -77,13 +77,12 @@ nav #icon {
   grid-template-columns: 2;
   padding-right: 1rem;
   margin-bottom: 4rem;
-  border-style: solid; 
-  border-radius: 0.5rem; 
-  border-width: 0.3rem; 
-  margin-right: 1rem; 
+  border-style: solid;
+  border-radius: 0.5rem;
+  border-width: 0.3rem;
+  margin-right: 1rem;
   border-color: rgb(215, 215, 215);
   /* grid-template-rows: repeat(2, minmax(7px, 120px)); */
-
 }
 .ware-selection {
   height: min-content;
@@ -135,8 +134,8 @@ nav #icon {
 }
 .modal-tab-panel {
   /* min-height: 520px; */
-    /* let it scroll */
-    /* overflow: auto; */
+  /* let it scroll */
+  /* overflow: auto; */
   display: flex;
   flex-flow: nowrap;
   margin-top: 0px;
@@ -225,28 +224,85 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
-div.form{
+div.form {
+  grid-column: 1 / 8;
   display: block;
   /* margin-bottom: 4rem; */
   /* border-style: solid;  */
   /* border-radius: 0.5rem;  */
   /* border-width: 0.3rem;  */
   /* border-color: #f5f5f5; */
-  margin-left: 15%;
-  margin-top: 15px;
-  /* align-items: center; */
-  /* align-content: center; */
-  /* text-align: center; */
+  margin-left: 35%;
+  /* margin-top: 15px; */
+  align-items: center;
+  align-content: center;
+  text-align: center;
 }
-form.ware-selection{
+form.ware-selection {
   display: inline;
-  margin-left:auto;
+  margin-left: auto;
   margin-right: auto;
-   text-align: left;
+  text-align: left;
 }
+/* RADIO BUTTON MAGIC STARTS HERE*/
+label {
+  display: block;
+  margin-bottom: 4px;
+  position: relative; /* to contain absolute elements */
+  /* padding-left: 30px; free space for custom radio button */
+  cursor: pointer;
+}
+/* hide default radio button  */
+label input[type="radio"] {
+  position: absolute; /* prevent taking any space */
+  /* cross-browser hidingg */
+  /* opactiy: 0; */
+  width: 0;
+  height: 0;
+}
+/* custom radio button */
+label span {
+  position: absolute;
+  /* position to the free space in <label> */
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 50%;
+  transition: 0.3s background-color; /* slight transition */
+}
+/* the check icon */
+label span:after {
+  content: "";
+  position: absolute;
+  display: none;
+  /* middle */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+label:hover span {
+  background-color: #ccc;
+}
+
+/**** Here's the trick ***/
+label input:checked ~ span {
+  background-color: #2eaadc;
+}
+label input:checked ~ span:after {
+  display: block;
+}
+
+
+
 /* 
 input[type="checkbox"], input[type="radio"]  {
   display:none;
