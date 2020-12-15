@@ -56,6 +56,7 @@
           </li>
         </ul>
         <div class="tab-content">
+          <!-- TAB MULTIPLE PROFUNDIDAD -->
           <div role="tabpanel" class="tab-pane active contenido" id="multiple">
             <div class="wrapper">
               <div class="wrappercalc">
@@ -207,11 +208,12 @@
         </div>
       </div>
     </div>
+
     <!-- Modal Section (afuera del container)-->
     <div class="bg-modal" id="popup">
       <div class="modal-content">
         <div class="close">+</div>
-        <div cla ss="row col-lg-12 page-header">
+        <div class="row col-lg-12 page-header">
           <h1 style="margin-top: 0px;">Medidas <small>de unidad de carga</small></h1>
         </div>
         <div role="tabpanel2">
@@ -316,41 +318,174 @@
         </div>
       </div>
     </div>
+    <!-- Modal Simple -->
+    <div class="bg-modal" id="s_popup">
+      <div class="modal-content">
+        <div class="close" id="s_close">+</div>
+        <div class="row col-lg-12 page-header">
+          <h1 style="margin-top: 0px;">Medidas <small>de unidad de carga</small></h1>
+        </div>
+        <div role="tabpanel2">
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active">
+              <a href="#s_alto" aria-controls="s_alto" data-toggle="tab" role="tab" style="color: #464646">1- Alto</a>
+            </li>
+            <li role="presentation">
+              <a href="#s_ancho" aria-controls="s_ancho" data-toggle="tab" role="tab" style="color: #464646">2- Largo</a>
+            </li>
+            <li role="presentation">
+              <a href="#s_largo" aria-controls="s_largo" data-toggle="tab" role="tab" style="color: #464646">3- Ancho</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div role="tabpanel2" class="tab-pane active contenido" id="s_alto">
+              <div class="modal-tab-panel">
+                <div class="modal-img">
+                  <img src="img/detalleAlto.PNG" class=".et-cart-info img-responsive" alt="Responsive image" />
+                  <!-- <img src="img/detalleAltoAlto.PNG" class=".et-cart-info img-responsive" alt="Responsive image" /> -->
+                </div>
+                <div class="modal-inputs altura">
+                  <div class="form-group">
+                    <label>Alto de Pallet [h<sub>p</sub>]</label>
+                    <input type="text" class="form-control" id="s_altopallet_t" placeholder="" value="2.00" />
+                  </div>
+                  <div class="form-group">
+                    <label>Holgura superior [Q<sub>y</sub>]</label>
+                    <input type="text" class="form-control" id="s_qsuperior" placeholder="" value="3" />
+                  </div>
+                  <div class="form-group">
+                    <label>Vano piso [Q<sub>p</sub>]</label>
+                    <input type="text" class="form-control" id="s_vanopiso" placeholder="" value="3" />
+                  </div>
+                  <div class="form-group">
+                    <label>Vano techo [Q<sub>T</sub>]</label>
+                    <input type="text" class="form-control" id="s_vanotecho" placeholder="" value="2" />
+                  </div>
+                  <div class="buttonHolder">
+                    <button onclick="calcularAlturaSimple()" type="#" class="btn btn-primary calcular_altura">Aplicar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel2" class="tab-pane contenido" id="s_ancho">
+              <div class="modal-tab-panel">
+                <div class="modal-img ancho">
+                  <img src="img/detalleAncho.PNG" class=".et-cart-info img-responsive" alt="Responsive image" />
+                </div>
+                <div class="modal-inputs ancho">
+                  <div class="form-group">
+                    <label>Ancho pallet [W<sub>p</sub>]</label>
+                    <input type="text" class="form-control" id="s_anchopallet" placeholder="" value="4" />
+                  </div>
+                  <div class="form-group">
+                    <label>Holgura ancho [Q<sub>x</sub>]</label>
+                    <input type="text" class="form-control" id="s_qancho" placeholder="" value="3" />
+                  </div>
+                  <div class="form-group">
+                    <label>Vano adelante [Q<sub>a</sub>]</label>
+                    <input type="text" class="form-control" id="s_vanoadelante" placeholder="" value="3" />
+                  </div>
+                  <div class="form-group">
+                    <label>Vano atrás [Q<sub>d</sub>]</label>
+                    <input type="text" class="form-control" id="s_vanoatras" placeholder="" value="2" />
+                  </div>
+                  <div class="buttonHolder">
+                    <button onclick="calcularAnchoSimple()" type="#" class="btn btn-primary calcular_ancho">Aplicar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel2" class="tab-pane contenido" id="s_largo">
+              <div class="modal-tab-panel">
+                <div class="modal-img largo">
+                  <img src="img/detalleProf.PNG" class=".et-cart-info img-responsive" alt="Responsive image" />
+                </div>
+                <div class="modal-inputs largo">
+                  <div class="form-group">
+                    <label>Largo de pallet [Q<sub>p</sub>]</label>
+                    <input type="text" class="form-control" id="s_largopallet" placeholder="" value="4" />
+                  </div>
+                  <div class="form-group">
+                    <label>Holgura profundidad [Q<sub>z</sub>]</label>
+                    <input type="text" class="form-control" id="s_qprof" placeholder="" value="3" />
+                  </div>
+                  <div class="form-group">
+                    <label>Vano posterior [Q<sub>w</sub>]</label>
+                    <input type="text" class="form-control" id="s_vanoposterior" placeholder="" value="3" />
+                  </div>
+                  <div class="form-group">
+                    <label>Vano pasillo [W<sub>p</sub>]</label>
+                    <input type="text" class="form-control" id="s_vanopasillo" placeholder="" value="2" />
+                  </div>
+                  <div class="buttonHolder">
+                    <button onclick="calcularLargoSimple()" type="#" class="btn btn-primary calcular_largo">Aplicar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script>
-      let div = document.getElementById("popup");
-      let but = document.getElementById("ucarga");
-      function showHide(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        if (div.style.display == "none") {
-          div.style.display = "flex";
-        } else if (div.style.display == "flex") {
-          div.style.display = "none";
+      
+      // let but = document.querySelector("#ucarga");
+      // function showHide(e) {
+      //   e.preventDefault();
+      //   e.stopPropagation();
+      //   if (div.style.display == "none") {
+      //     div.style.display = "flex";
+      //   } else if (div.style.display == "flex") {
+      //     div.style.display = "none";
+      //   }
+      // }
+      // but.addEventListener("click", showHide, false);
+
+      
+      let divSimple = document.querySelector("#s_popup");
+      let divMulti = document.querySelector("#popup");
+      document.addEventListener("click",(e) => {
+        let clic = e.target;
+        if (divMulti.style.display == "flex" && clic === divMulti) {
+          divMulti.style.display = "none";
         }
-      }
-      but.addEventListener("click", showHide, false);
+      },
+      false
+      );
 
       document.addEventListener("click",(e) => {
           let clic = e.target;
-          if (div.style.display == "flex" && clic === div) {
-            div.style.display = "none";
+          if (divSimple.style.display == "flex" && clic === divSimple) {
+            divSimple.style.display = "none";
           }
         },
         false
       );
-      document.getElementById("ucarga").addEventListener("click", () => {
-        document.querySelector(".bg-modal").style.display = "flex";
+
+      document.querySelector("#ucargasimple").addEventListener("click", () => {
+        // console.log($("#TabList").tabs('option', 'active'));
+        divSimple.style.display = "flex";
       });
-      document.getElementById("ucargasimple").addEventListener("click", () => {
-        console.log($("#TabList").tabs('option', 'active'));
-        // document.querySelector(".bg-modal").style.display = "flex";
-      });
-      document.querySelector(".close").addEventListener("click", () => {
-        document.querySelector(".bg-modal").style.display = "none";
+      document.querySelector("#s_close").addEventListener("click", () => {
+        divSimple.style.display = "none";
       });
 
+      document.getElementById("ucarga").addEventListener("click", () => {
+        divMulti.style.display = "flex";
+      });
+      document.querySelector(".close").addEventListener("click", () => {
+        divMulti.style.display = "none";
+      });
+      
+      // document.getElementById("ucarga").addEventListener("click", () => {
+      //   document.querySelector(".bg-modal").style.display = "flex";
+      // });
+      // document.querySelector(".close").addEventListener("click", () => {
+      //   document.querySelector(".bg-modal").style.display = "none";
+      // });
       
     </script>
   </body>

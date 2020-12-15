@@ -1,34 +1,52 @@
 $(document).ready(() => {
-  
+
+  // CARGA PESTAÑA SIMPLE AUTOMATICAMENTE
   $('.nav-tabs a[href="#simple"]').tab('show');
 
+  // GET STANDARDVALUES
   let macros = values[0].medidas;
   let tabAlto = values[1].pestana_alto;
   let tabAncho = values[2].pestana_ancho;
   let tabLargo = values[3].pestana_largo;
-  // MACROS
+  // WRITE STANDARDVALUES ON DOCUMENT
   document.getElementById("largo_m").value = macros.largo_m;
+  document.getElementById("largo_s").value = macros.largo_m;
   document.getElementById("ancho_m").value = macros.ancho_m;
+  document.getElementById("ancho_s").value = macros.ancho_m;
   document.getElementById("alto_m").value = macros.alto_m;
+  document.getElementById("alto_s").value = macros.alto_m;
   document.getElementById("altopallet_m").value = macros.altopallet_m;
+  document.getElementById("altopallet_s").value = macros.altopallet_m;
   document.getElementById("altopallet_t").value = macros.altopallet_m;
+  document.getElementById("s_altopallet_t").value = macros.altopallet_m;
   // PESTAÑA ALTO
   document.getElementById("qsuperior").value = tabAlto.qsuperior;
+  document.getElementById("s_qsuperior").value = tabAlto.qsuperior;
   document.getElementById("vanopiso").value = tabAlto.vanopiso;
+  document.getElementById("s_vanopiso").value = tabAlto.vanopiso;
   document.getElementById("vanotecho").value = tabAlto.vanotecho;
+  document.getElementById("s_vanotecho").value = tabAlto.vanotecho;
   // PESTAÑA ANCHO
   document.getElementById("anchopallet").value = tabAncho.anchopallet;
+  document.getElementById("s_anchopallet").value = tabAncho.anchopallet;
   document.getElementById("qancho").value = tabAncho.qancho;
+  document.getElementById("s_qancho").value = tabAncho.qancho;
   document.getElementById("vanoadelante").value = tabAncho.vanoadelante;
+  document.getElementById("s_vanoadelante").value = tabAncho.vanoadelante;
   document.getElementById("vanoatras").value = tabAncho.vanoatras;
+  document.getElementById("s_vanoatras").value = tabAncho.vanoatras;
   // PESTAÑA LARGO
   document.getElementById("largopallet").value = tabLargo.largopallet;
+  document.getElementById("s_largopallet").value = tabLargo.largopallet;
   document.getElementById("qprof").value = tabLargo.qprof;
+  document.getElementById("s_qprof").value = tabLargo.qprof;
   document.getElementById("vanoposterior").value = tabLargo.vanoposterior;
+  document.getElementById("s_vanoposterior").value = tabLargo.vanoposterior;
   document.getElementById("vanopasillo").value = tabLargo.vanopasillo;
+  document.getElementById("s_vanopasillo").value = tabLargo.vanopasillo;
 
   calcularMultiprof();
-
+  calcularSimple();
 
   // CAMBIAR IMAGEN() SIMPLE O DOBLE
   $("input:radio[name=tipoAlmacen]").click(function() {
@@ -45,18 +63,15 @@ $(document).ready(() => {
     }
      $('#simpledoble').attr('src', image_name);
   });
-
-
-
-  // $(".calcular2").click(() => {
-  //   calcularDimensionesMultiprof();
-  // });
-
-  // $(".calcular3").click(() => {
-  //   calcularMultiprof();
-  // });
 });
 
+
+$(document).keydown(function(event) { 
+  if (event.keyCode == 27) { 
+    $('#popup').hide();
+    $('#s_popup').hide();
+  }
+});
 
 
 function redondear(cantidad, decimales) {
@@ -151,22 +166,31 @@ function calcularLargoMultiprof() {
   calcularDimensionesMultiprof();
 }
 
-function calcularSimple() {
-  let output = $('input[name=tipoAlmacen]:checked', '#tipo').val(); 
-  console.log(output);
-}
-function calcularDimensionesSimple() {
+// function calcularSimple() {
+//   let output = $('input[name=tipoAlmacen]:checked', '#tipo').val(); 
+//   console.log(output);
+// }
+// function calcularDimensionesSimple() {
   
-}
+// }
 
 
 function calcularSimple() {
+
+  let ancho = parseFloat(document.getElementById("ancho_m").value);
   let output = $('input[name=tipoAlmacen]:checked', '#tipo').val(); 
   console.log(output);
+
+
   let profundidades = 0;
   if (output == 'Simple') {profundidades = 2}
     else if ( output == 'Doble') {profundidades = 4}; 
   console.log(profundidades);
+
+  
+  // COMPROBAR ANCHO Y PROFUNDIDADES FONDO PASILLO MAS PASILLO
+  
+
   // CALCULO EL ANCHO
     // let i = 0;
     // while (i*(profundidades * fondoPasillo + pasillo) < ancho) {i++}
@@ -176,14 +200,6 @@ function calcularSimple() {
     //   calculusAnchus();
     // }
 }
-
-
-
-
-
-
-
-
 
 
 
