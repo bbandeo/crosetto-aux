@@ -151,20 +151,20 @@
                   <h3 style="text-align: center; font-family: 'Hind', Tahoma, Geneva, Verdana, sans-serif">Unidades</h3>
                   <br />
                   <div class="form-group" style="padding: 0 15px 0 20px">
-                    <label>Transelevadores</label>
-                    <input type="number" class="form-control" id="transelevadores_s" placeholder="" value="1" />
-                  </div>
-                  <div class="form-group" style="padding: 0 15px 0 20px">
                     <label>Calles</label>
                     <input type="number" class="form-control" id="calles_s" placeholder="" value="1" />
                   </div>
                   <div class="form-group" style="padding: 0 15px 0 20px">
-                    <label>Profundidades</label>
-                    <input type="number" class="form-control" id="profundidad_s" placeholder="" value="1" />
+                    <label>Transelevadores</label>
+                    <input type="number" class="form-control" id="transelevadores_s" placeholder="" value="1" />
                   </div>
                   <div class="form-group" style="padding: 0 15px 0 20px">
                     <label>Niveles</label>
                     <input type="number" class="form-control" id="niveles_s" placeholder="" value="1" />
+                  </div>
+                  <div class="form-group" style="padding: 0 15px 0 20px">
+                    <label>Profundidades</label>
+                    <input type="number" class="form-control" id="profundidad_s" placeholder="" value="1" readonly/>
                   </div>
                   <div class="form-group" style="padding: 0 15px 0 20px">
                     <label>Posiciones Totales</label>
@@ -175,7 +175,7 @@
                   <button onclick="calcularSimple()" type="#" class="btn btn-primary">Calcular</button>
                 </div>
                 <div class="buttonHolder" style="grid-column: 2 / 4;">
-                  <button onclick="calcularDimensionesSIMPLEDOBLE()" type="#" class="btn btn-primary">Calcular</button>
+                  <button onclick="calcularDimensionesSimple()" type="#" class="btn btn-primary">Calcular</button>
                 </div>
                 <div class="buttonHolder" style="text-align: center; grid-column: 1 / 8">
                   <button id="ucargasimple" type="button" class="btn btn-secondary abrirModal">Configuración de unidad de carga</button>
