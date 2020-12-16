@@ -7,28 +7,31 @@
   outline: none;
   color: rgb(50, 50, 50);
 }
-
-
 body {
   font-family: "Paduak", sans-serif;
   font-weight: 450;
   transform: translateZ(0);
   background-color: #eee;
-  background-image: url('../img/cubes.png');
+  background-image: url("../img/cubes.png");
 }
-
 nav {
   height: 70px;
   width: 100%;
   background-color: rgba(52, 73, 94, 0.94);
 }
-
+#logo {
+  position: relative;
+  height: 70%;
+  margin: 0.6% 0 auto 0;
+  float: left;
+  padding-left: 5%;
+}
 .tab-content {
-  background-color: rgba(255,255,255, 1);
+  background-color: rgba(255, 255, 255, 1);
   border-style: solid;
   border-radius: 0.5rem;
   border-width: 0.001rem;
-  border-top:#fff;
+  border-top: #fff;
   border-color: rgb(215, 215, 215);
   border-top-right-radius: 0;
   border-top-left-radius: 0px;
@@ -39,7 +42,7 @@ nav {
   grid-template-columns: repeat(8, 1fr);
   gap: 30px;
   grid-auto-rows: minmax(100px, auto);
-  background-color: rgba(255,255,255, 1);
+  background-color: rgba(255, 255, 255, 1);
 }
 .imagen {
   grid-column: 1 / 5;
@@ -119,7 +122,6 @@ nav {
   width: 50%;
   margin-top: 10%;
 }
-
 div.form {
   grid-column: 1 / 8;
   display: block;
@@ -134,8 +136,7 @@ form.ware-selection {
   margin-left: auto;
   margin-right: auto;
   text-align: left;
-} 
-
+}
 @media (max-width: 1048px) {
   .modal-content {
     display: block;
@@ -162,7 +163,7 @@ form.ware-selection {
   #simpledoble {
     display: none;
   }
-  #imgMulti{
+  #imgMulti {
     display: none;
   }
   form.ware-selection {
@@ -170,11 +171,10 @@ form.ware-selection {
     display: block;
     float: right;
     text-align: center;
-  } 
-  #multiWrap{
+  }
+  #multiWrap {
     grid-row: 1;
   }
-  
 }
 
 @media (max-width: 909px) {
@@ -203,10 +203,8 @@ form.ware-selection {
   .imagen-bottom {
     display: none;
   }
-}
+} 
 
-
-/* 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -214,20 +212,19 @@ input::-webkit-inner-spin-button {
 }
 input[type="number"] {
   -moz-appearance: textfield;
-}*/
-
-
+}
 
 /* RADIO BUTTON MAGIC STARTS HERE*/
 label {
   display: block;
   margin-bottom: 4px;
-  position: relative; 
+  position: relative;
   cursor: pointer;
 }
 /* hide default radio button  */
 label input[type="radio"] {
   position: absolute;
+  opacity: 0;
   width: 0;
   height: 0;
 }
@@ -240,7 +237,7 @@ label span {
   height: 20px;
   background-color: #ddd;
   border-radius: 50%;
-  transition: 0.3s background-color; 
+  transition: 0.3s background-color;
 }
 label span:after {
   content: "";
@@ -264,10 +261,3 @@ label input:checked ~ span {
 label input:checked ~ span:after {
   display: block;
 }
-/* 
-.img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translateY(-50%) translateX(-50%);
-} */
