@@ -123,9 +123,8 @@
           <!-- TAB SIMPLE Y DOBLE PROFUNDIDAD -->
           <div role="tabpanel" class="tab-pane contenido" id="simple">
             <div class="wrapper">
-
               <div class="wrappercalc">
-                <div class="dimensiones">  
+                <div class="dimensiones">
                   <h3 style="text-align: center; font-family: 'Hind', Tahoma, Geneva, Verdana, sans-serif">Dimensiones</h3>
                   <div class="form-group" style="padding: 0 30px 0 20px">
                     <br />
@@ -144,7 +143,6 @@
                     <label>Alto de Pallet [h<sub>p</sub>]</label>
                     <input type="number" class="form-control" id="altopallet_s" placeholder="" value="2.00" />
                   </div>
-
                 </div>
 
                 <div class="resultados">
@@ -164,17 +162,17 @@
                   </div>
                   <div class="form-group" style="padding: 0 15px 0 20px">
                     <label>Profundidades</label>
-                    <input type="number" class="form-control" id="profundidad_s" placeholder="" value="1" readonly/>
+                    <input type="number" class="form-control" id="profundidad_s" placeholder="" value="1" readonly />
                   </div>
                   <div class="form-group" style="padding: 0 15px 0 20px">
                     <label>Posiciones Totales</label>
                     <input type="number" class="form-control" id="posiciones_s" placeholder="" value="1" readonly />
                   </div>
                 </div>
-                <div class="buttonHolder" style="grid-column: 1 / 2;">
+                <div class="buttonHolder" style="grid-column: 1 / 2">
                   <button onclick="calcularSimple()" type="#" class="btn btn-primary">Calcular</button>
                 </div>
-                <div class="buttonHolder" style="grid-column: 2 / 4;">
+                <div class="buttonHolder" style="grid-column: 2 / 4">
                   <button onclick="calcularDimensionesSimple()" type="#" class="btn btn-primary">Calcular</button>
                 </div>
                 <div class="buttonHolder" style="text-align: center; grid-column: 1 / 8">
@@ -182,39 +180,38 @@
                 </div>
               </div>
               <div class="imagen">
-
                 <div class="form">
                   <form class="ware-selection" id="tipo">
-                    <label for="radioSimple" style="padding-left: 30px; align-content: right">Simple Profundidad
+                    <label for="radioSimple" style="padding-left: 30px; align-content: right"
+                      >Simple Profundidad
                       <input type="radio" id="radioSimple" name="tipoAlmacen" value="Simple" style="align-content: right" />
-                      <span></span>
-                    </label><br />
-                    <label for="radioDoble" style="padding-left: 30px;">Doble Profundidad
+                      <span></span> </label
+                    ><br />
+                    <label for="radioDoble" style="padding-left: 30px"
+                      >Doble Profundidad
                       <input type="radio" id="radioDoble" name="tipoAlmacen" value="Doble" checked="checked" />
-                      <span></span>
-                    </label><br />
+                      <span></span> </label
+                    ><br />
                   </form>
                 </div>
-                <br>
+                <br />
                 <!-- <br /> -->
                 <img src="img/transDoble.png" name="simpledoble" id="simpledoble" class=".et-cart-info img-responsive" alt="Responsive image" />
               </div>
               <div class="imagen-bottom">
-                <img src="img/sVistaSuperior.PNG" class=".et-cart-info img-responsive" alt="Responsive image" />
+                <img src="img/sVistaSuperior.png" class=".et-cart-info img-responsive" alt="Responsive image" />
               </div>
-
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Modal Section (afuera del container)-->
+    <!-- MODAL Multiprof -->
     <div class="bg-modal" id="popup">
       <div class="modal-content">
         <div class="close">+</div>
         <div class="row col-lg-12 page-header">
-          <h1 style="margin-top: 0px;">Medidas <small>de unidad de carga</small></h1>
+          <h1 style="margin-top: 0px">Medidas <small>de unidad de carga</small></h1>
         </div>
         <div role="tabpanel2">
           <ul class="nav nav-tabs" role="tablist">
@@ -323,7 +320,7 @@
       <div class="modal-content">
         <div class="close" id="s_close">+</div>
         <div class="row col-lg-12 page-header">
-          <h1 style="margin-top: 0px;">Medidas <small>de unidad de carga</small></h1>
+          <h1 style="margin-top: 0px">Medidas <small>de unidad de carga</small></h1>
         </div>
         <div role="tabpanel2">
           <ul class="nav nav-tabs" role="tablist">
@@ -342,7 +339,6 @@
               <div class="modal-tab-panel">
                 <div class="modal-img">
                   <img src="img/detalleAlto.PNG" class=".et-cart-info img-responsive" alt="Responsive image" />
-                  <!-- <img src="img/detalleAltoAlto.PNG" class=".et-cart-info img-responsive" alt="Responsive image" /> -->
                 </div>
                 <div class="modal-inputs altura">
                   <div class="form-group">
@@ -427,36 +423,24 @@
         </div>
       </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script>
-      
-      // let but = document.querySelector("#ucarga");
-      // function showHide(e) {
-      //   e.preventDefault();
-      //   e.stopPropagation();
-      //   if (div.style.display == "none") {
-      //     div.style.display = "flex";
-      //   } else if (div.style.display == "flex") {
-      //     div.style.display = "none";
-      //   }
-      // }
-      // but.addEventListener("click", showHide, false);
-
-      
       let divSimple = document.querySelector("#s_popup");
       let divMulti = document.querySelector("#popup");
-      document.addEventListener("click",(e) => {
-        let clic = e.target;
-        if (divMulti.style.display == "flex" && clic === divMulti) {
-          divMulti.style.display = "none";
-        }
-      },
-      false
+      document.addEventListener(
+        "click",
+        (e) => {
+          let clic = e.target;
+          if (divMulti.style.display == "flex" && clic === divMulti) {
+            divMulti.style.display = "none";
+          }
+        },
+        false
       );
-
-      document.addEventListener("click",(e) => {
+      document.addEventListener(
+        "click",
+        (e) => {
           let clic = e.target;
           if (divSimple.style.display == "flex" && clic === divSimple) {
             divSimple.style.display = "none";
@@ -464,7 +448,6 @@
         },
         false
       );
-
       document.querySelector("#ucargasimple").addEventListener("click", () => {
         // console.log($("#TabList").tabs('option', 'active'));
         divSimple.style.display = "flex";
@@ -479,14 +462,6 @@
       document.querySelector(".close").addEventListener("click", () => {
         divMulti.style.display = "none";
       });
-      
-      // document.getElementById("ucarga").addEventListener("click", () => {
-      //   document.querySelector(".bg-modal").style.display = "flex";
-      // });
-      // document.querySelector(".close").addEventListener("click", () => {
-      //   document.querySelector(".bg-modal").style.display = "none";
-      // });
-      
     </script>
   </body>
 </html>
