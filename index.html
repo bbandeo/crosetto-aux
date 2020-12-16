@@ -26,23 +26,13 @@
   <body>
     <header>
       <nav>
-        <a href="#"><img src="./styles/Logo-Crosetto-w.png" alt="Crosetto Ingeniería S.A." id="logo" /></a>
-        <ul>
-          <li><a class="active" href="#">Inicio</a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-        </ul>
-        <label id="icon">
-          <i class="fas fa-bars"></i>
-        </label>
+        <a href="#"><img src="./styles/Logo-Crosetto-w.png" alt="Crosetto Ingeniería S.A." id="logo" style="height: 70%; margin: 1%; margin-left: 5%; float: left;"/></a>
       </nav>
     </header>
     <div class="container" id="todo">
       <div class="row col-lg-12 page-header">
         <h1>
-          Dimensionamiento de Almacén
+          Dimensionamiento del Almacén
           <small>Calles, niveles y profundidades</small>
         </h1>
       </div>
@@ -56,6 +46,8 @@
           </li>
         </ul>
         <div class="tab-content">
+          <br>
+          <br>
           <!-- TAB MULTIPLE PROFUNDIDAD -->
           <div role="tabpanel" class="tab-pane active contenido" id="multiple">
             <div class="wrapper">
@@ -123,7 +115,7 @@
           <!-- TAB SIMPLE Y DOBLE PROFUNDIDAD -->
           <div role="tabpanel" class="tab-pane contenido" id="simple">
             <div class="wrapper">
-              <div class="wrappercalc">
+              <div class="wrappercalc responsive">
                 <div class="dimensiones">
                   <h3 style="text-align: center; font-family: 'Hind', Tahoma, Geneva, Verdana, sans-serif">Dimensiones</h3>
                   <div class="form-group" style="padding: 0 30px 0 20px">
@@ -144,7 +136,6 @@
                     <input type="number" class="form-control" id="altopallet_s" placeholder="" value="2.00" />
                   </div>
                 </div>
-
                 <div class="resultados">
                   <h3 style="text-align: center; font-family: 'Hind', Tahoma, Geneva, Verdana, sans-serif">Unidades</h3>
                   <br />
@@ -179,7 +170,7 @@
                   <button id="ucargasimple" type="button" class="btn btn-secondary abrirModal">Configuración de unidad de carga</button>
                 </div>
               </div>
-              <div class="imagen">
+              <div class="imagen responsive">
                 <div class="form">
                   <form class="ware-selection" id="tipo">
                     <label for="radioSimple" style="padding-left: 30px; align-content: right"
@@ -197,12 +188,14 @@
                 <br />
                 <img src="img/transDoble.png" name="simpledoble" id="simpledoble" class=".et-cart-info img-responsive" alt="Responsive image" />
               </div>
-              <div class="imagen-bottom">
+              <div class="imagen-bottom responsive">
                 <img src="img/sVistaSuperior.png" class=".et-cart-info img-responsive" alt="Responsive image" />
               </div>
             </div>
           </div>
         </div>
+        <br>
+        <br>
       </div>
     </div>
     <!-- MODAL Multiprof -->

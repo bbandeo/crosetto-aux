@@ -1214,7 +1214,7 @@ a.bg-danger:hover {
 .page-header {
   padding-bottom: 9px;
   margin: 40px 0 20px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px transparent #eee;
 }
 ul,
 ol {
@@ -1386,8 +1386,8 @@ pre code {
   overflow-y: scroll;
 }
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 2%;
+  padding-left: 2%;
   margin-right: auto;
   margin-left: auto;
 }

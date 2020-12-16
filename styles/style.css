@@ -1,17 +1,24 @@
 * {
-  padding: 0;
+  box-sizing: border-box;
   margin: 0;
-  text-decoration: none;
-  list-style: none;
+  padding: 0;
+  user-select: none;
+  cursor: default;
+  outline: none;
+  color: rgb(50, 50, 50);
 }
+
 
 body {
   font-family: "Paduak", sans-serif;
   font-weight: 450;
+  transform: translateZ(0);
+  background-color: #eee;
+  background-image: url('../img/cubes.png');
 }
 
 nav {
-  height: 80px;
+  height: 70px;
   width: 100%;
   background-color: rgba(52, 73, 94, 0.94);
 }
@@ -59,12 +66,23 @@ nav #icon {
   cursor: pointer;
   display: none;
 }
+.tab-content {
+  background-color: rgba(255,255,255, 1);
+  border-style: solid;
+  border-radius: 0.5rem;
+  border-width: 0.001rem;
+  border-top:#fff;
+  border-color: rgb(215, 215, 215);
+  border-top-right-radius: 0;
+  border-top-left-radius: 0px;
+}
 .wrapper {
   display: grid;
-  margin-top: 50px;
+  margin-top: 0px;
   grid-template-columns: repeat(8, 1fr);
   gap: 30px;
   grid-auto-rows: minmax(100px, auto);
+  background-color: rgba(255,255,255, 1);
 }
 .imagen {
   grid-column: 1 / 5;
@@ -105,7 +123,6 @@ nav #icon {
   grid-row: 2;
 }
 .bg-modal {
-  /* display: flex; */
   display: none;
   justify-content: center;
   align-items: top;
@@ -230,13 +247,8 @@ input[type="number"] {
 div.form {
   grid-column: 1 / 8;
   display: block;
-  /* margin-bottom: 4rem; */
-  /* border-style: solid;  */
-  /* border-radius: 0.5rem;  */
-  /* border-width: 0.3rem;  */
-  /* border-color: #f5f5f5; */
+  margin-bottom: 4rem;
   margin-left: 35%;
-  /* margin-top: 15px; */
   align-items: center;
   align-content: center;
   text-align: center;
@@ -251,36 +263,30 @@ form.ware-selection {
 label {
   display: block;
   margin-bottom: 4px;
-  position: relative; /* to contain absolute elements */
-  /* padding-left: 30px; free space for custom radio button */
+  position: relative; 
   cursor: pointer;
 }
 /* hide default radio button  */
 label input[type="radio"] {
-  position: absolute; /* prevent taking any space */
-  /* cross-browser hidingg */
-  /* opactiy: 0; */
+  position: absolute;
   width: 0;
   height: 0;
 }
 /* custom radio button */
 label span {
   position: absolute;
-  /* position to the free space in <label> */
   top: 0;
   left: 0;
   width: 20px;
   height: 20px;
   background-color: #ddd;
   border-radius: 50%;
-  transition: 0.3s background-color; /* slight transition */
+  transition: 0.3s background-color; 
 }
-/* the check icon */
 label span:after {
   content: "";
   position: absolute;
   display: none;
-  /* middle */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -292,7 +298,6 @@ label span:after {
 label:hover span {
   background-color: #ccc;
 }
-
 /**** Here's the trick ***/
 label input:checked ~ span {
   background-color: #2eaadc;
@@ -300,49 +305,3 @@ label input:checked ~ span {
 label input:checked ~ span:after {
   display: block;
 }
-
-
-
-/* 
-input[type="checkbox"], input[type="radio"]  {
-  display:none;
-  } 
-  
-  label {
-    font-family: sans-serif;
-    color: salmon;
-  }
-  label:hover {
-    color: grey;
-  }
-
-  .check {
-    display: inline-block;
-    position: relative;
-    border: 5px solid #AAAAAA;
-    border-radius: 10%;
-    height: 2rem;
-    width: 2rem;
-    top: center;
-    left: center;
-  }
-  .check:select {
-    display: inline-block;
-    position: relative;
-    border: 5px solid salmon;
-    border-radius: 10%;
-    height: 2rem;
-    width: 2rem;
-    top: center;
-    left: center;
-  }
-  .check:hover {
-    display: inline-block;
-    position: relative;
-    border: 5px solid salmon;
-    border-radius: 10%;
-    height: 2rem;
-    width: 2rem;
-    top: center;
-    left: center;
-  } */
