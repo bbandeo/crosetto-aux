@@ -232,6 +232,9 @@ function calcularDimensionesSimple() {
   document.getElementById("ancho_s").value = ancho;
   document.getElementById("alto_s").value = alto;
   calcularSimple();
+  let profundidades = profs * equipos;
+  document.getElementById("profundidad_s").value = profundidades;
+  
 }
 
 
