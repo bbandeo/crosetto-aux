@@ -1,6 +1,6 @@
 $(document).ready(() => {
   // CARGA PESTAÑA SIMPLE AUTOMATICAMENTE
-  $('.nav-tabs a[href="#simple"]').tab("show");
+  // $('.nav-tabs a[href="#simple"]').tab("show");
 
   // GET STANDARDVALUES
   let macros = values[0].medidas;
@@ -233,8 +233,7 @@ function calcularDimensionesSimple() {
   document.getElementById("alto_s").value = alto;
   calcularSimple();
   let profundidades = profs * equipos;
-  document.getElementById("profundidad_s").value = profundidades;
-  
+  document.getElementById("profundidad_s").value = profundidades; 
 }
 
 
