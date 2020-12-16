@@ -231,7 +231,7 @@ function calcularDimensionesSimple() {
   document.getElementById("largo_s").value = largo;
   document.getElementById("ancho_s").value = ancho;
   document.getElementById("alto_s").value = alto;
-  calcularMultiprof();
+  calcularSimple();
 }
 
 
