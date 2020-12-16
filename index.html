@@ -16,9 +16,6 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Padauk&display=swap");
     </style>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-    </style>
 
     <link rel="stylesheet" type="text/css" href="./styles/bootstrap.min.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="./styles/style.css" media="screen" />
@@ -26,7 +23,7 @@
   <body>
     <header>
       <nav>
-        <a href="#"><img src="./styles/Logo-Crosetto-w.png" alt="Crosetto Ingeniería S.A." id="logo" style="height: 70%; margin: 1%; margin-left: 5%; float: left;"/></a>
+        <a href="#"><img src="./styles/Logo-Crosetto-w.png" alt="Crosetto Ingeniería S.A." id="logo" style="height: 70%; margin: 1%; margin-left: 5%; float: left" /></a>
       </nav>
     </header>
     <div class="container" id="todo">
@@ -46,12 +43,12 @@
           </li>
         </ul>
         <div class="tab-content">
-          <br>
-          <br>
+          <br />
+          <br />
           <!-- TAB MULTIPLE PROFUNDIDAD -->
           <div role="tabpanel" class="tab-pane active contenido" id="multiple">
             <div class="wrapper">
-              <div class="wrappercalc">
+              <div class="wrappercalc" id="multiWrap">
                 <div class="dimensiones">
                   <!-- <h3 style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Dimensiones</h3> -->
                   <h3 style="text-align: center; font-family: 'Hind', Tahoma, Geneva, Verdana, sans-serif">Dimensiones</h3>
@@ -105,7 +102,7 @@
               </div>
               <div class="imagen">
                 <br />
-                <img src="img/transmultBlanco.png" class=".et-cart-info img-responsive" alt="Responsive image" />
+                <img src="img/transmultBlanco.png" class=".et-cart-info img-responsive" id="imgMulti" alt="Responsive image" />
               </div>
               <div class="imagen-bottom">
                 <img src="img/vistaSuperior.PNG" class=".et-cart-info img-responsive" alt="Responsive image" />
@@ -115,7 +112,7 @@
           <!-- TAB SIMPLE Y DOBLE PROFUNDIDAD -->
           <div role="tabpanel" class="tab-pane contenido" id="simple">
             <div class="wrapper">
-              <div class="wrappercalc responsive">
+              <div class="wrappercalc">
                 <div class="dimensiones">
                   <h3 style="text-align: center; font-family: 'Hind', Tahoma, Geneva, Verdana, sans-serif">Dimensiones</h3>
                   <div class="form-group" style="padding: 0 30px 0 20px">
@@ -170,7 +167,7 @@
                   <button id="ucargasimple" type="button" class="btn btn-secondary abrirModal">Configuración de unidad de carga</button>
                 </div>
               </div>
-              <div class="imagen responsive">
+              <div class="imagen">
                 <div class="form">
                   <form class="ware-selection" id="tipo">
                     <label for="radioSimple" style="padding-left: 30px; align-content: right"
@@ -188,14 +185,14 @@
                 <br />
                 <img src="img/transDoble.png" name="simpledoble" id="simpledoble" class=".et-cart-info img-responsive" alt="Responsive image" />
               </div>
-              <div class="imagen-bottom responsive">
+              <div class="imagen-bottom">
                 <img src="img/sVistaSuperior.png" class=".et-cart-info img-responsive" alt="Responsive image" />
               </div>
             </div>
           </div>
         </div>
-        <br>
-        <br>
+        <br />
+        <br />
       </div>
     </div>
     <!-- MODAL Multiprof -->
