@@ -1,6 +1,6 @@
 $(document).ready(() => {
   // CARGA PESTAÑA SIMPLE AUTOMATICAMENTE
-  // $('.nav-tabs a[href="#simple"]').tab("show");
+  $('.nav-tabs a[href="#simple"]').tab("show");
 
   // GET STANDARDVALUES
   let macros = values[0].medidas;
@@ -105,7 +105,7 @@ function getValuesMultiprof() {
   values.ancho = parseFloat(document.getElementById("ancho_m").value);
   values.holguraProf = parseFloat(document.getElementById("qprof").value);
   values.largoPallet = parseFloat(document.getElementById("largopallet").value);
-  values.profundidadPos = values.largoPallet + values.holguraProf;
+  values.profundidadPos = (values.largoPallet + values.holguraProf)*2;
   values.vanoPosterior = parseFloat(document.getElementById("vanoposterior").value);
   values.vanoPasillo = parseFloat(document.getElementById("vanopasillo").value);
   values.vanoAncho = values.vanoPasillo + values.vanoPosterior * 2;
@@ -132,23 +132,28 @@ function calcularDimensionesMultiprof() {
   document.getElementById("largo_m").value = largo;
   document.getElementById("ancho_m").value = ancho;
   document.getElementById("alto_m").value = alto;
-  calcularMultiprof();
+  let posiciones = Math.floor(v.calles * v.niveles * v.profundidades);
+  document.getElementById("posiciones_m").value = posiciones;
+  // calcularMultiprof();
 }
 
 function calcularAlturaMultiprof() {
   let alturaPallet = document.getElementById("altopallet_t").value;
   document.getElementById("altopallet_m").value = alturaPallet;
   calcularDimensionesMultiprof();
+  calcularMultiprof();
 }
 function calcularAnchoMultiprof() {
   let alturaPallet = document.getElementById("altopallet_t").value;
   document.getElementById("altopallet_m").value = alturaPallet;
   calcularDimensionesMultiprof();
+  calcularMultiprof();
 }
 function calcularLargoMultiprof() {
   let alturaPallet = document.getElementById("altopallet_t").value;
   document.getElementById("altopallet_m").value = alturaPallet;
   calcularDimensionesMultiprof();
+  calcularMultiprof();
 }
 
 function getValuesSimple() {
@@ -241,14 +246,17 @@ function calcularAlturaSimple() {
   let alturaPallet = document.getElementById("s_altopallet_t").value;
   document.getElementById("altopallet_s").value = alturaPallet;
   calcularDimensionesSimple();
+  calcularMultiprof();
 }
 function calcularAnchoSimple() {
   let alturaPallet = document.getElementById("s_altopallet_t").value;
   document.getElementById("altopallet_s").value = alturaPallet;
   calcularDimensionesSimple();
+  calcularMultiprof();
 }
 function calcularLargoSimple() {
   let alturaPallet = document.getElementById("s_altopallet_t").value;
   document.getElementById("altopallet_s").value = alturaPallet;
   calcularDimensionesSimple();
+  calcularMultiprof();
 }
