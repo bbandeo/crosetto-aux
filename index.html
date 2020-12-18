@@ -69,7 +69,7 @@
                     <input type="number" class="form-control" id="altopallet_m" placeholder="" value="2.00" data-index="4" />
                   </div>
                   <div class="buttonHolder">
-                    <button onclick="calcularMultiprof()" type="#" class="btn btn-primary" data-index="5">Calcular</button>
+                    <button onclick="calcularMultiprof(5)" type="#" class="btn btn-primary" data-index="5">Calcular</button>
                   </div>
                 </div>
                 <div class="resultados inputform">
@@ -92,7 +92,7 @@
                     <input type="number" class="form-control" id="posiciones_m" placeholder="" value="1" readonly />
                   </div>
                   <div class="buttonHolder">
-                    <button onclick="calcularDimensionesMultiprof()" type="#" class="btn btn-primary" data-index="9">Calcular</button>
+                    <button onclick="calcularDimensionesMultiprof(0)" type="#" class="btn btn-primary" data-index="9">Calcular</button>
                   </div>
                 </div>
                 <div class="buttonHolder" style="text-align: center; grid-column: 1 / 8">
@@ -149,18 +149,18 @@
                   </div>
                   <div class="form-group" style="padding: 0 15px 0 20px">
                     <label>Profundidades</label>
-                    <input type="number" class="form-control" id="profundidad_s" placeholder="" value="1" readonly data-index="18" />
+                    <input type="number" class="form-control" id="profundidad_s" placeholder="" value="1" readonly  />
                   </div>
                   <div class="form-group" style="padding: 0 15px 0 20px">
                     <label>Posiciones Totales</label>
-                    <input type="number" class="form-control" id="posiciones_s" placeholder="" value="1" readonly data-index="19" />
+                    <input type="number" class="form-control" id="posiciones_s" placeholder="" value="1" readonly  />
                   </div>
                 </div>
                 <div class="buttonHolder inputform" style="grid-column: 1 / 2;">
-                  <button onclick="calcularSimple()" type="#" class="btn btn-primary" data-index="14">Calcular</button>
+                  <button onclick="calcularSimple(14)" type="#" class="btn btn-primary" data-index="14">Calcular</button>
                 </div>
                 <div class="buttonHolder inputform" style="grid-column: 2 / 4">
-                  <button onclick="calcularDimensionesSimple()" type="#" class="btn btn-primary" data-index="20">Calcular</button>
+                  <button onclick="calcularDimensionesSimple(9)" type="#" class="btn btn-primary" data-index="18">Calcular</button>
                 </div>
                 <div class="buttonHolder" style="text-align: center; grid-column: 1 / 8">
                   <button id="ucargasimple" type="button" class="btn btn-secondary abrirModal">Configuración de unidad de carga</button>
@@ -447,6 +447,7 @@
           $('[data-index="' + (index + 1).toString() + '"]').focus();
         }
       });
+
       $("input").focus(function () {
         $(this).select();
       });

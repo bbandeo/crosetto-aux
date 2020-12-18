@@ -112,7 +112,7 @@ function getValuesMultiprof() {
   return values;
 }
 
-function calcularMultiprof() {
+function calcularMultiprof(di) {
   const v = getValuesMultiprof();
   let niveles = Math.floor((v.alto - v.vanoAlto) / (v.altoPallet + v.holguraSuperior));
   let profundidades = Math.floor((v.ancho - v.vanoAncho) / v.profundidadPos);
@@ -122,9 +122,11 @@ function calcularMultiprof() {
   document.getElementById("niveles_m").value = niveles;
   document.getElementById("profundidad_m").value = profundidades;
   document.getElementById("posiciones_m").value = posiciones;
+  $('[data-index="' + (di + 1).toString() + '"]').focus();
+
 }
 
-function calcularDimensionesMultiprof() {
+function calcularDimensionesMultiprof(di) {
   const v = getValuesMultiprof();
   let largo = redondear(parseFloat(v.calles * v.anchoCalle + v.vanoLargo), 2);
   let alto = redondear(parseFloat(v.niveles * (v.altoPallet + v.holguraSuperior) + v.vanoAlto), 2);
@@ -134,6 +136,8 @@ function calcularDimensionesMultiprof() {
   document.getElementById("alto_m").value = alto;
   let posiciones = Math.floor(v.calles * v.niveles * v.profundidades);
   document.getElementById("posiciones_m").value = posiciones;
+  
+  $('[data-index="' + (di + 1).toString() + '"]').focus();
   // calcularMultiprof();
 }
 
@@ -188,7 +192,7 @@ function getValuesSimple() {
   return values;
 }
 
-function calcularSimple() {
+function calcularSimple(di) {
   const v = getValuesSimple();
   let profs = 0;
   let i = 0;
@@ -217,9 +221,20 @@ function calcularSimple() {
   document.getElementById("niveles_s").value = niveles;
   document.getElementById("profundidad_s").value = profundidades;
   document.getElementById("posiciones_s").value = posiciones;
+  
+  $('[data-index="' + (di + 1).toString() + '"]').focus();
 }
 
-function calcularDimensionesSimple() {
+$(".inputform").on("keydown", "input", function (event) {
+  if (event.which == 13) {
+    event.preventDefault();
+    let $this = $(event.target);
+    let index = parseFloat($this.attr("data-index"));
+    $('[data-index="' + (index + 1).toString() + '"]').focus();
+  }
+});
+
+function calcularDimensionesSimple(di) {
   const v = getValuesSimple();
   let profs = 0;
   let i = 0;
@@ -237,8 +252,9 @@ function calcularDimensionesSimple() {
   document.getElementById("ancho_s").value = ancho;
   document.getElementById("alto_s").value = alto;
   calcularSimple();
-  let profundidades = profs * equipos;
+  let profundidades = profs * v.transelevadores;
   document.getElementById("profundidad_s").value = profundidades; 
+  $('[data-index="' + (di + 1).toString() + '"]').focus();
 }
 
 
