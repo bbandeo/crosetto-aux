@@ -276,3 +276,59 @@ function calcularLargoSimple() {
   calcularDimensionesSimple();
   calcularMultiprof();
 }
+
+function printPDF() {
+  let elems = document.getElementsByName("ipForm")[0].getElementsByTagName("input");
+  for (let i = 0; i < elems.length; i++) {
+    // set attribute to property value
+    elems[i].setAttribute("value", elems[i].value);
+    console.log(elems[i].value);
+    elems[i].insertAdjacentHTML("afterend", "<span class ='insertedContent'>" + elems[i].value + "</span>");
+    elems[i].style.display = "none";
+    console.log(elems[i].value);
+  }
+  elems = document.getElementsByName("ipForm2")[0].getElementsByTagName("input");
+  for (let i = 0; i < elems.length; i++) {
+    // set attribute to property value
+    elems[i].setAttribute("value", elems[i].value);
+    elems[i].insertAdjacentHTML("afterend", "<span class ='insertedContent'>" + elems[i].value + "</span>");
+    elems[i].style.display = "none";
+    console.log(elems[i].value);
+  }
+
+  let body = document.body;
+  let html = document.documentElement;
+  let height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+  const invoice = document.querySelector("#tabcont");
+  let heightCM = height / 35.35;
+  // EXPORTAR A PDF
+  console.log(invoice);
+  const opt = {
+    margin: 3,
+    filename: "myfile.pdf",
+    image: { type: "jpeg", quality: 1 },
+    html2canvas: { scrollX: 0, scrollY: 0 },
+    jsPDF: { unit: "cm", format: [heightCM, 60], orientation: "landscape" },
+    pagebreak: { mode: ["css", "legacy"], after: ".breakme" }
+  };
+  // html2pdf(invoice, opt);
+  html2pdf().from(invoice).set(opt).save();
+
+  // DELETE
+  elems = document.getElementsByName("ipForm2")[0].getElementsByTagName("input");
+  for (let i = 0; i < elems.length; i++) {
+    let insertedContent = document.querySelector(".insertedContent");
+    if (insertedContent) {
+      insertedContent.parentNode.removeChild(insertedContent);
+    }
+    elems[i].style.display = "block";
+  }
+  elems = document.getElementsByName("ipForm")[0].getElementsByTagName("input");
+  for (let i = 0; i < elems.length; i++) {
+    let insertedContent = document.querySelector(".insertedContent");
+    if (insertedContent) {
+      insertedContent.parentNode.removeChild(insertedContent);
+    }
+    elems[i].style.display = "block";
+  }
+}

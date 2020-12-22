@@ -6,10 +6,14 @@
     <title>Calculadora de Warehouse</title>
     <meta http-equiv="Content-Language" content="Spanish" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.js" integrity="sha512-j1ROhMHK3+9Cn1+d1s1MJ9T/8vLOcR78cW3P6hK/URWnjOSQiOLdIa8erf337Wq9fesEf95mqIYJSbVQfElinA==" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.min.js"></script> -->
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="standardValues.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/pdf.js"></script>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Hind:wght@600&display=swap");
     </style>
@@ -41,14 +45,14 @@
             <a href="#simple" aria-controls="simple" data-toggle="tab" role="tab"><b>2- Doble y simple profundidad</b></a>
           </li>
         </ul>
-        <div class="tab-content">
+        <div class="tab-content" id="tabcont">
           <br />
           <br />
           <!-- TAB MULTIPLE PROFUNDIDAD -->
           <div role="tabpanel" class="tab-pane active contenido" id="multiple">
             <div class="wrapper">
               <div class="wrappercalc" id="multiWrap">
-                <div class="dimensiones inputform">
+                <div class="dimensiones inputform" id="wDimensionesMulti">
                   <!-- <h3 style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Dimensiones</h3> -->
                   <h3 style="text-align: center; font-family: 'Hind', Tahoma, Geneva, Verdana, sans-serif">Dimensiones</h3>
                   <div class="form-group" style="padding: 0 30px 0 20px">
@@ -72,7 +76,7 @@
                     <button onclick="calcularMultiprof(5)" type="#" class="btn btn-primary" data-index="5">Calcular</button>
                   </div>
                 </div>
-                <div class="resultados inputform">
+                <div class="resultados inputform" id="wResultadosMulti">
                   <h3 style="text-align: center; font-family: 'Hind', Tahoma, Geneva, Verdana, sans-serif">Unidades</h3>
                   <div class="form-group" style="padding: 0 15px 0 20px">
                     <br />
@@ -111,52 +115,56 @@
           <!-- TAB SIMPLE Y DOBLE PROFUNDIDAD -->
           <div role="tabpanel" class="tab-pane contenido" id="simple">
             <div class="wrapper">
-              <div class="wrappercalc">
-                <div class="dimensiones inputform">
-                  <h3 style="text-align: center; font-family: 'Hind', Tahoma, Geneva, Verdana, sans-serif">Dimensiones</h3>
-                  <div class="form-group" style="padding: 0 30px 0 20px">
+              <div class="wrappercalc" >
+                <div class="dimensiones inputform" id="wDimensionesSimple">
+                  <form name="ipForm">
+                    <h3 style="text-align: center; font-family: 'Hind', Tahoma, Geneva, Verdana, sans-serif">Dimensiones</h3>
+                    <div class="form-group" style="padding: 0 30px 0 20px">
+                      <br />
+                      <label>Largo Total  [L<sub>T</sub>]</label>
+                      <input type="number" class="form-control" id="largo_s" placeholder="" value="50" data-index="10" />
+                    </div>
+                    <div class="form-group" style="padding: 0 30px 0 20px">
+                      <label>Ancho [W<sub>T</sub>]</label>
+                      <input type="number" class="form-control" id="ancho_s" placeholder="" value="14" data-index="11" />
+                    </div>
+                    <div class="form-group" style="padding: 0 30px 0 20px">
+                      <label>Alto [h<sub>T</sub>]</label>
+                      <input type="number" class="form-control" id="alto_s" placeholder="" value="18.00" data-index="12" />
+                    </div>
+                    <div class="form-group" style="padding: 0 30px 0 20px">
+                      <label>Alto de Pallet [h<sub>p</sub>]</label>
+                      <input type="number" class="form-control" id="altopallet_s" placeholder="" value="2.00" data-index="13" />
+                    </div>
+                  </form>
+                </div>
+                <div class="resultados inputform" id="wResultadosSimple">
+                  <form name="ipForm2">
+                    <h3 style="text-align: center; font-family: 'Hind', Tahoma, Geneva, Verdana, sans-serif">Unidades</h3>
                     <br />
-                    <label>Largo Total  [L<sub>T</sub>]</label>
-                    <input type="number" class="form-control" id="largo_s" placeholder="" value="50" data-index="10" />
-                  </div>
-                  <div class="form-group" style="padding: 0 30px 0 20px">
-                    <label>Ancho [W<sub>T</sub>]</label>
-                    <input type="number" class="form-control" id="ancho_s" placeholder="" value="14" data-index="11" />
-                  </div>
-                  <div class="form-group" style="padding: 0 30px 0 20px">
-                    <label>Alto [h<sub>T</sub>]</label>
-                    <input type="number" class="form-control" id="alto_s" placeholder="" value="18.00" data-index="12" />
-                  </div>
-                  <div class="form-group" style="padding: 0 30px 0 20px">
-                    <label>Alto de Pallet [h<sub>p</sub>]</label>
-                    <input type="number" class="form-control" id="altopallet_s" placeholder="" value="2.00" data-index="13" />
-                  </div>
+                    <div class="form-group" style="padding: 0 15px 0 20px">
+                      <label>Calles</label>
+                      <input type="number" class="form-control" id="calles_s" placeholder="" value="1" data-index="15" />
+                    </div>
+                    <div class="form-group" style="padding: 0 15px 0 20px">
+                      <label>Transelevadores</label>
+                      <input type="number" class="form-control" id="transelevadores_s" placeholder="" value="1" data-index="16" />
+                    </div>
+                    <div class="form-group" style="padding: 0 15px 0 20px">
+                      <label>Niveles</label>
+                      <input type="number" class="form-control" id="niveles_s" placeholder="" value="1" data-index="17" />
+                    </div>
+                    <div class="form-group" style="padding: 0 15px 0 20px">
+                      <label>Profundidades</label>
+                      <input type="number" class="form-control" id="profundidad_s" placeholder="" value="1" readonly />
+                    </div>
+                    <div class="form-group" style="padding: 0 15px 0 20px">
+                      <label>Posiciones Totales</label>
+                      <input type="number" class="form-control" id="posiciones_s" placeholder="" value="1" readonly />
+                    </div>
+                  </form>
                 </div>
-                <div class="resultados inputform">
-                  <h3 style="text-align: center; font-family: 'Hind', Tahoma, Geneva, Verdana, sans-serif">Unidades</h3>
-                  <br />
-                  <div class="form-group" style="padding: 0 15px 0 20px">
-                    <label>Calles</label>
-                    <input type="number" class="form-control" id="calles_s" placeholder="" value="1" data-index="15" />
-                  </div>
-                  <div class="form-group" style="padding: 0 15px 0 20px">
-                    <label>Transelevadores</label>
-                    <input type="number" class="form-control" id="transelevadores_s" placeholder="" value="1" data-index="16" />
-                  </div>
-                  <div class="form-group" style="padding: 0 15px 0 20px">
-                    <label>Niveles</label>
-                    <input type="number" class="form-control" id="niveles_s" placeholder="" value="1" data-index="17" />
-                  </div>
-                  <div class="form-group" style="padding: 0 15px 0 20px">
-                    <label>Profundidades</label>
-                    <input type="number" class="form-control" id="profundidad_s" placeholder="" value="1" readonly  />
-                  </div>
-                  <div class="form-group" style="padding: 0 15px 0 20px">
-                    <label>Posiciones Totales</label>
-                    <input type="number" class="form-control" id="posiciones_s" placeholder="" value="1" readonly  />
-                  </div>
-                </div>
-                <div class="buttonHolder inputform" style="grid-column: 1 / 2;">
+                <div class="buttonHolder inputform" style="grid-column: 1 / 2">
                   <button onclick="calcularSimple(14)" type="#" class="btn btn-primary" data-index="14">Calcular</button>
                 </div>
                 <div class="buttonHolder inputform" style="grid-column: 2 / 4">
@@ -190,8 +198,12 @@
             </div>
           </div>
         </div>
+        
+        <button onclick="printPDF()" class="btn btn-primary" id="downloadbtn">Exportar a PDF</button>
         <br />
         <br />
+
+
       </div>
     </div>
     <!-- MODAL Multiprof -->
@@ -295,6 +307,8 @@
                   </div>
                   <div class="buttonHolder">
                     <button onclick="calcularLargoMultiprof()" type="#" class="btn btn-primary calcular_largo">Aplicar</button>
+
+                    
                   </div>
                 </div>
               </div>
@@ -303,6 +317,7 @@
         </div>
       </div>
     </div>
+
     <!-- Modal Simple -->
     <div class="bg-modal" id="s_popup">
       <div class="modal-content">
@@ -414,18 +429,26 @@
     <script>
       let divSimple = document.querySelector("#s_popup");
       let divMulti = document.querySelector("#popup");
-      document.addEventListener("click",(e) => {
+      document.addEventListener(
+        "click",
+        (e) => {
           let clic = e.target;
           if (divMulti.style.display == "flex" && clic === divMulti) {
             divMulti.style.display = "none";
           }
-        }, false);
-      document.addEventListener("click",(e) => {
+        },
+        false
+      );
+      document.addEventListener(
+        "click",
+        (e) => {
           let clic = e.target;
           if (divSimple.style.display == "flex" && clic === divSimple) {
             divSimple.style.display = "none";
           }
-        }, false);
+        },
+        false
+      );
       document.querySelector("#ucargasimple").addEventListener("click", () => {
         // console.log($("#TabList").tabs('option', 'active'));
         divSimple.style.display = "flex";
