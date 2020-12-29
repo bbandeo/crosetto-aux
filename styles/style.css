@@ -181,7 +181,7 @@ form.ware-selection {
   }
 } */
 
-@media (max-width: 709px) {
+@media (max-width: 920px) {
   .wrapper {
     display: grid;
     margin-top: 20px;

@@ -27,6 +27,7 @@
     <header>
       <nav style="background-color: #323232">
         <a href="#"><img src="./styles/Logo-Crosetto-w.png" alt="Crosetto Ingeniería S.A." id="logo" /></a>
+            <button onclick="printPDF()" class="btn btn-secondary" id="downloadbtn" style="margin-right: 18%; float: right">Exportar a PDF</button>
       </nav>
     </header>
     <div class="container" id="todo">
@@ -44,6 +45,9 @@
           <li role="presentation">
             <a href="#simple" aria-controls="simple" data-toggle="tab" role="tab"><b>2- Doble y simple profundidad</b></a>
           </li>
+          <!-- <li style="float: right">
+            <button onclick="printPDF()" class="btn btn-primary" id="downloadbtn" style="margin: 0;">Exportar a PDF</button>
+          </li> -->
         </ul>
         <div class="tab-content" id="tabcont">
           <br />
@@ -115,7 +119,7 @@
           <!-- TAB SIMPLE Y DOBLE PROFUNDIDAD -->
           <div role="tabpanel" class="tab-pane contenido" id="simple">
             <div class="wrapper">
-              <div class="wrappercalc" >
+              <div class="wrappercalc" id="simpleWrap">
                 <div class="dimensiones inputform" id="wDimensionesSimple">
                   <form name="ipForm">
                     <h3 style="text-align: center; font-family: 'Hind', Tahoma, Geneva, Verdana, sans-serif">Dimensiones</h3>
@@ -198,12 +202,9 @@
             </div>
           </div>
         </div>
-        
-        <button onclick="printPDF()" class="btn btn-primary" id="downloadbtn">Exportar a PDF</button>
+
         <br />
         <br />
-
-
       </div>
     </div>
     <!-- MODAL Multiprof -->
@@ -307,8 +308,6 @@
                   </div>
                   <div class="buttonHolder">
                     <button onclick="calcularLargoMultiprof()" type="#" class="btn btn-primary calcular_largo">Aplicar</button>
-
-                    
                   </div>
                 </div>
               </div>
@@ -317,7 +316,6 @@
         </div>
       </div>
     </div>
-
     <!-- Modal Simple -->
     <div class="bg-modal" id="s_popup">
       <div class="modal-content">

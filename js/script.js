@@ -299,7 +299,7 @@ function printPDF() {
   let body = document.body;
   let html = document.documentElement;
   let height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
-  const invoice = document.querySelector("#tabcont");
+  const invoice = document.querySelector(".wrapper");
   let heightCM = height / 35.35;
   // EXPORTAR A PDF
   console.log(invoice);
@@ -308,11 +308,11 @@ function printPDF() {
     filename: "myfile.pdf",
     image: { type: "jpeg", quality: 1 },
     html2canvas: { scrollX: 0, scrollY: 0 },
-    jsPDF: { unit: "cm", format: [heightCM, 60], orientation: "landscape" },
+    jsPDF: { unit: "cm", format: [heightCM, 60], orientation: "portrait" },
     pagebreak: { mode: ["css", "legacy"], after: ".breakme" }
   };
-  // html2pdf(invoice, opt);
-  html2pdf().from(invoice).set(opt).save();
+  html2pdf(invoice, opt);
+  // html2pdf().from(invoice).set(opt).save();
 
   // DELETE
   elems = document.getElementsByName("ipForm2")[0].getElementsByTagName("input");
