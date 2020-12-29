@@ -1,6 +1,6 @@
 $(document).ready(() => {
   // CARGA PESTAÑA SIMPLE AUTOMATICAMENTE
-  $('.nav-tabs a[href="#simple"]').tab("show");
+  // $('.nav-tabs a[href="#simple"]').tab("show");
 
   // GET STANDARDVALUES
   let macros = values[0].medidas;
