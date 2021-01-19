@@ -121,7 +121,7 @@ function calcularMultiprof(di) {
   document.getElementById("calles_m").value = calles;
   document.getElementById("niveles_m").value = niveles;
   document.getElementById("profundidad_m").value = profundidades;
-  document.getElementById("posiciones_m").value = posiciones;
+  document.getElementById("posiciones_m").value = posiciones *2;
   $('[data-index="' + (di + 1).toString() + '"]').focus();
 
 }
@@ -134,7 +134,7 @@ function calcularDimensionesMultiprof(di) {
   document.getElementById("largo_m").value = largo;
   document.getElementById("ancho_m").value = ancho;
   document.getElementById("alto_m").value = alto;
-  let posiciones = Math.floor(v.calles * v.niveles * v.profundidades);
+  let posiciones = Math.floor(v.calles * v.niveles * v.profundidades *2);
   document.getElementById("posiciones_m").value = posiciones;
   
   $('[data-index="' + (di + 1).toString() + '"]').focus();
