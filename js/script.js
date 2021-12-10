@@ -2,12 +2,12 @@ $(document).ready(() => {
   // CARGA PESTAÑA SIMPLE AUTOMATICAMENTE
   // $('.nav-tabs a[href="#simple"]').tab("show");
 
-  // GET STANDARDVALUES
+  // Escribe valores estandar desde standardValues.js
   let macros = values[0].medidas;
   let tabAlto = values[1].pestana_alto;
   let tabAncho = values[2].pestana_ancho;
   let tabLargo = values[3].pestana_largo;
-  // WRITE STANDARDVALUES ON DOCUMENT
+  // WRITE STANDARDVALUES ON DOCUMENTs
   document.getElementById("largo_m").value = macros.largo_m;
   document.getElementById("largo_s").value = macros.largo_m;
   document.getElementById("ancho_m").value = macros.ancho_m;
@@ -47,7 +47,7 @@ $(document).ready(() => {
   calcularMultiprof();
   calcularSimple();
 
-  // CAMBIAR IMAGEN() SIMPLE O DOBLE
+  // CAMBIA IMAGEN() SEGUN TRANS SIMPLE O DOBLE
   $("input:radio[name=tipoAlmacen]").click(function () {
     let nroTrans = document.getElementById("transelevadores_s").value;
     let value = $(this).val();
@@ -67,6 +67,7 @@ $(document).ready(() => {
   });
 });
 
+// Cierra modal con ESC
 $(document).keydown(function (event) {
   if (event.keyCode == 27) {
     $("#popup").hide();
@@ -225,6 +226,7 @@ function calcularSimple(di) {
   $('[data-index="' + (di + 1).toString() + '"]').focus();
 }
 
+// Con tecla enter pasa a siguiente campo según data-index=i
 $(".inputform").on("keydown", "input", function (event) {
   if (event.which == 13) {
     event.preventDefault();
@@ -280,20 +282,16 @@ function calcularLargoSimple() {
 function printPDF() {
   let elems = document.getElementsByName("ipForm")[0].getElementsByTagName("input");
   for (let i = 0; i < elems.length; i++) {
-    // set attribute to property value
+    // Temporalmente crea elementos para imprimir en PDF
     elems[i].setAttribute("value", elems[i].value);
-    console.log(elems[i].value);
     elems[i].insertAdjacentHTML("afterend", "<span class ='insertedContent'>" + elems[i].value + "</span>");
     elems[i].style.display = "none";
-    console.log(elems[i].value);
   }
   elems = document.getElementsByName("ipForm2")[0].getElementsByTagName("input");
   for (let i = 0; i < elems.length; i++) {
-    // set attribute to property value
     elems[i].setAttribute("value", elems[i].value);
     elems[i].insertAdjacentHTML("afterend", "<span class ='insertedContent'>" + elems[i].value + "</span>");
     elems[i].style.display = "none";
-    console.log(elems[i].value);
   }
 
   let body = document.body;
@@ -301,6 +299,8 @@ function printPDF() {
   let height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
   const invoice = document.querySelector(".wrapper");
   let heightCM = height / 35.35;
+  
+  
   // EXPORTAR A PDF
   console.log(invoice);
   const opt = {
@@ -314,7 +314,7 @@ function printPDF() {
   html2pdf(invoice, opt);
   // html2pdf().from(invoice).set(opt).save();
 
-  // DELETE
+  // DELETE elementos de PDF
   elems = document.getElementsByName("ipForm2")[0].getElementsByTagName("input");
   for (let i = 0; i < elems.length; i++) {
     let insertedContent = document.querySelector(".insertedContent");

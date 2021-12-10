@@ -425,41 +425,42 @@
     </div>
   </div>
   <script>
+    
     let divSimple = document.querySelector("#s_popup");
     let divMulti = document.querySelector("#popup");
-    document.addEventListener(
-      "click",
-      (e) => {
+    
+    // Cierra modal al hacer click afuera
+    document.addEventListener("click", (e) => {
         let clic = e.target;
         if (divMulti.style.display == "flex" && clic === divMulti) {
           divMulti.style.display = "none";
         }
-      },
-      false
-    );
-    document.addEventListener(
-      "click",
-      (e) => {
+      }, false);
+
+    document.addEventListener("click", (e) => {
         let clic = e.target;
         if (divSimple.style.display == "flex" && clic === divSimple) {
           divSimple.style.display = "none";
         }
-      },
-      false
-    );
+      }, false);
+    
+    // Abre Modal - Configuracion de unidad de carga
     document.querySelector("#ucargasimple").addEventListener("click", () => {
-      // console.log($("#TabList").tabs('option', 'active'));
       divSimple.style.display = "flex";
     });
+    // Cierra modal en X
     document.querySelector("#s_close").addEventListener("click", () => {
       divSimple.style.display = "none";
     });
+    // Abre Modal - Configuracion de unidad de carga 
     document.getElementById("ucarga").addEventListener("click", () => {
       divMulti.style.display = "flex";
     });
+    // Cierra modal en x 
     document.querySelector(".close").addEventListener("click", () => {
       divMulti.style.display = "none";
     });
+    // Continua a proximo atributo data-index -- inputs
     $(".inputform").on("keydown", "input", function (event) {
       if (event.which == 13) {
         event.preventDefault();
@@ -468,7 +469,7 @@
         $('[data-index="' + (index + 1).toString() + '"]').focus();
       }
     });
-
+    // Al hacer focus selecciona todo el texto para poder sobreescribirlo
     $("input").focus(function () {
       $(this).select();
     });
